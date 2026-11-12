@@ -1,0 +1,38 @@
+<div class="hamburger-wrapper">
+	<button
+		type="button"
+		class="navbutton small hamburger"
+		popovertarget="mobile-nav-menu"
+		aria-label="open menu"
+	>
+		{% include "icons/menu.svg" %}
+	</button>
+</div>
+
+<div popover="auto" id="mobile-nav-menu" class="hamburger-menu">
+	<div class="menu-header">
+		<button
+			type="button"
+			class="navbutton small primary"
+			popovertarget="mobile-nav-menu"
+			popovertargetaction="hide"
+			aria-label="close menu"
+		>
+			{% include "icons/cross.svg" %}
+		</button>
+	</div>
+
+	<nav aria-label="Mobiel menu">
+		{% for item in navigation.items %}
+		<a href="{{ item.url }}" class="navbutton large primary full{% if page.url == item.url %} active{% endif %}"{{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+			{% include "icons/" + item.icon + ".svg" %}
+			{{ item.text }}
+		</a>
+		{% endfor %}
+
+		<a class="navbutton large primary full" aria-disabled="true">
+			{% include "icons/" + navigation.account.icon + ".svg" %}
+			{{ navigation.account.text }}
+		</a>
+	</nav>
+</div>
