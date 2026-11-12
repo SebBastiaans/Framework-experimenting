@@ -1,0 +1,124 @@
+/* Skip link: onzichtbaar tot hij focus krijgt via Tab */
+.skip-link {
+	position: absolute;
+	top: -100%;
+	left: var(--margin-inline);
+	padding: var(--gap-small) var(--gap-medium);
+	background-color: var(--color-primary);
+	color: var(--color-neutral-white);
+	border-radius: var(--border-radius);
+	z-index: 10;
+}
+
+.skip-link:focus {
+	top: var(--gap-small);
+}
+
+header {
+	width: 100%;
+	box-sizing: border-box;
+	height: 15vh;
+	background-color: var(--color-primary);
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	padding: 0 5%;
+}
+
+.header-navigation {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin-left: 4em;
+
+	@media (max-width: 720px) {
+		display: none;
+	}
+}
+
+.header-navigation-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 2em;
+	list-style: none; /* is nu een <ul>, dus geen bolletjes */
+}
+
+.header {
+	background-color: var(--color-primary);
+	color: var(--color-neutral-white);
+	justify-content: space-between;
+	width: 8em;
+	border: none;
+}
+
+.active {
+	transition-duration: 0.3s;
+	border-bottom: 5px solid var(--color-neutral-white);
+	border-radius: 12px 12px 0 0;
+}
+/* Logo (src/_includes/partials/logo.html)
+   In Svelte golden deze regels alleen binnen het Logo-component,
+   daarom staat overal .logo-header voor. */
+.logo-header {
+	display: flex;
+	gap: 1em;
+	flex-direction: row;
+	align-items: center;
+	text-decoration: none;
+	color: var(--color-neutral-white); /* svg's gebruiken currentColor */
+
+	@media (max-width: 1080px) {
+		flex-direction: column;
+		gap: 0.5em;
+
+		#line {
+			display: none;
+		}
+
+		.logo-header-text {
+			display: flex;
+			flex-direction: row;
+			gap: 0.2em;
+
+			p {
+				margin: 0;
+				font-size: 12px;
+				line-height: 1.15;
+			}
+		}
+
+		#logo {
+			height: 2em;
+			margin-left: 1em;
+		}
+	}
+}
+
+.logo-header p {
+	color: var(--color-neutral-white);
+	font-size: 20px;
+	line-height: 1;
+}
+
+.logo-header #underline {
+	display: none;
+
+	@media (max-width: 1080px) {
+		display: block;
+		margin-top: -0.2em;
+	}
+}
+
+/* Iconen in de navigatie (src/_includes/icons/*.svg)
+   Kwamen uit de <style>-blokken van de losse icon-bestanden.
+   width/height werken niet op een <path>, dus die staan nu op de <svg>. */
+.navbutton svg path {
+	fill: none;
+}
+
+@media (max-width: 720px) {
+	.navbutton svg {
+		width: 24px;
+		height: 24px;
+	}
+}

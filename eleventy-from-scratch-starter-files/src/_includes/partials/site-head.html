@@ -1,19 +1,24 @@
-<a class="[ skip-link ] [ button ]" href="#main-content">Skip to content</a>
-<header role="banner" class="site-head">
-	<div class="wrapper">
-		<div class="site-head__inner">
-            <a href="/" aria-label="{{ site.name }} - home" class="site-head__brand">
-			<nav class="[ nav ] [ site-head__nav ] [ font-sans ]" aria-label="Primary">
-            <ul class="nav__list">
-                {% for item in navigation.items %}
-                <li>
-                    <a href="{{ item.url }}" {{ helpers.getLinkActiveState(item.url, page.url) | safe }}
-                        >{{ item.text }}</a
-                    >
-                </li>
-                {% endfor %}
-            </ul>
-			</nav>
+<a class="skip-link" href="#main-content">Jump directly to main content</a>
+<header class="site-header">
+	{% include "partials/logo.html" %}
+
+	<nav class="header-navigation" aria-label="Hoofdmenu">
+		<ul class="header-navigation-wrapper">
+			{% for item in navigation.items %}
+			<li>
+				<a href="{{ item.url }}" class="navbutton header{% if page.url == item.url %} active{% endif %}"{{ helpers.getLinkActiveState(item.url, page.url) | safe }}>
+					{% include "icons/" + item.icon + ".svg" %}
+					{{ item.text }}
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+
+		<div class="account-button">
+			<a class="navbutton header" aria-disabled="true">
+				{% include "icons/" + navigation.account.icon + ".svg" %}
+				{{ navigation.account.text }}
+			</a>
 		</div>
-	</div>
+	</nav>
 </header>

@@ -2,11 +2,17 @@
 	"items": [
 		{
 			"text": "Home",
-			"url": "/"
+			"url": "/",
+			"icon": "home"
 		},
 		{
 			"text": "Info",
-			"url": "/info/"
+			"url": "/info/",
+			"icon": "info"
 		}
-	]
+	],
+	"account": {
+		"text": "Account",
+		"icon": "account"
+	}
 }
