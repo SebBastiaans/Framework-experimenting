@@ -1,7 +1,8 @@
 // Cross-browser test (Chromium, Firefox, WebKit/Safari) voor de framework-vergelijking.
-// Gebruik:  node tests/cross-browser.mjs <Framework> <BASE_URL> <pad>
-// Voorbeeld: node tests/cross-browser.mjs Eleventy http://localhost:8081 /info/
-// Pas de testlogica niet aan, zodat Eleventy en SvelteKit identiek getest worden.
+// Gebruik:  node tests/scripts/cross-browser.mjs <Framework> <BASE_URL> <pad>
+// Voorbeeld: node tests/scripts/cross-browser.mjs Eleventy http://localhost:8081 /info/
+// Resultaten komen in tests/results/<framework>/ (de map wordt aangemaakt als hij nog niet bestaat).
+// Pas de testlogica niet aan, zodat alle frameworks identiek getest worden.
 import { chromium, firefox, webkit } from 'playwright';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
@@ -10,9 +11,9 @@ const [framework = 'Eleventy', BASE_URL = 'http://localhost:8081', PATH = '/info
 const URL = BASE_URL + PATH;
 const RUNS = 5;
 const AXE_URL = 'https://cdn.jsdelivr.net/npm/axe-core@4.10.2/axe.min.js';
-const OUT_DIR = new globalThis.URL('./results/', import.meta.url);
-const SHOT_DIR = new globalThis.URL('./results/screenshots/', import.meta.url);
-const slug = framework.toLowerCase();
+const slug = framework.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+const OUT_DIR = new globalThis.URL(`../results/${slug}/`, import.meta.url);
+const SHOT_DIR = new globalThis.URL(`../results/${slug}/screenshots/`, import.meta.url);
 
 const DESKTOP = { viewport: { width: 1280, height: 800 } };
 const MOBILE = { viewport: { width: 390, height: 844 } };

@@ -1,6 +1,7 @@
-// Playwright-audit voor de framework-vergelijking (Eleventy vs SvelteKit).
+// Playwright-audit (Chromium) voor de framework-vergelijking.
 // Uitvoeren via de Playwright MCP-tool `browser_run_code_unsafe` met dit bestand als `filename`.
-// Pas alleen CONFIG aan; laat de rest gelijk zodat beide projecten identiek getest worden.
+// De JSON-uitkomst opslaan als tests/results/<framework>/<framework>-info.json.
+// Pas alleen CONFIG aan; laat de rest gelijk zodat alle frameworks identiek getest worden.
 async (page) => {
 	const CONFIG = {
 		framework: 'Eleventy',

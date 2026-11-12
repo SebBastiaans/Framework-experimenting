@@ -10,7 +10,7 @@ Deze pagina legt de resultaten vast van de geautomatiseerde test van de `/info`-
 | **Build** | Productie-build (`npx @11ty/eleventy`), geserveerd met `python3 -m http.server` |
 | **Browser** | Chromium via Playwright MCP (hoofdstuk 1–6), plus Chromium, Firefox en WebKit via Playwright (hoofdstuk 7) |
 | **Metingen** | 5 runs per profiel, mediaan gerapporteerd, cache leeg bij elke run |
-| **Testscripts** | `tests/playwright-audit.js` en `tests/cross-browser.mjs` |
+| **Testscripts** | `tests/scripts/playwright-audit.js` en `tests/scripts/cross-browser.mjs` |
 
 ## Testprofielen
 
@@ -147,7 +147,7 @@ De pagina werkt hetzelfde met en zonder JavaScript, omdat Eleventy alleen statis
 
 ## 7. Cross-browser
 
-Dezelfde functionele en toegankelijkheidstests in drie browser-engines, met het script `tests/cross-browser.mjs` (Playwright 1.65.0). De metingen zijn op desktop (1280 × 800) zonder vertraging gedaan: CPU- en netwerkvertraging kan Playwright alleen in Chromium nabootsen. De vertraagde mobiele meting staat in hoofdstuk 1.
+Dezelfde functionele en toegankelijkheidstests in drie browser-engines, met het script `tests/scripts/cross-browser.mjs` (Playwright 1.65.0). De metingen zijn op desktop (1280 × 800) zonder vertraging gedaan: CPU- en netwerkvertraging kan Playwright alleen in Chromium nabootsen. De vertraagde mobiele meting staat in hoofdstuk 1.
 
 | | Chromium 158 | Firefox 159 | WebKit 27.2 (Safari) |
 |---|---|---|---|
@@ -174,7 +174,7 @@ De pagina werkt en gedraagt zich in alle drie de engines hetzelfde. Er zijn twee
 - **Firefox mobiel:** axe vindt hier 2 contrast-elementen in plaats van 1. De tekstblokken overlappen op een smal scherm, en Firefox rendert die overlap anders. Daardoor beoordeelt axe één extra element.
 - **WebKit en Tab:** Safari springt met Tab standaard alleen langs formuliervelden en slaat links over. Daarom is in WebKit getest met Alt+Tab. Dat is gelijk aan de Safari-instelling "Druk op Tab om elk onderdeel op een webpagina te markeren". Met die toets zijn de Tab-stops gelijk aan die in de andere browsers.
 
-Screenshots van het mobiele menu staan in `tests/results/screenshots/` (`eleventy-<browser>-menu-open.png` en `eleventy-<browser>-mobile.png`).
+Screenshots van het mobiele menu staan in `tests/results/eleventy/screenshots/` (`eleventy-<browser>-menu-open.png` en `eleventy-<browser>-mobile.png`).
 
 ## Beperkingen van deze test
 

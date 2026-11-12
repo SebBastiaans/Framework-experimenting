@@ -1,0 +1,272 @@
+{
+  "framework": "SvelteKit",
+  "url": "http://localhost:8081/info",
+  "date": "2026-11-12T10:24:17.239Z",
+  "runs": 5,
+  "browsers": {
+    "chromium": {
+      "version": "158.0.8127.18",
+      "performance": {
+        "ttfb": 225,
+        "fcp": 272,
+        "lcp": 272,
+        "cls": 0,
+        "domContentLoaded": 267,
+        "load": 1642,
+        "requests": 39,
+        "jsFiles": 21,
+        "failed": [],
+        "consoleErrors": []
+      },
+      "a11y": {
+        "desktop": {
+          "violations": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "nodes": 2
+            },
+            {
+              "id": "empty-heading",
+              "impact": "minor",
+              "nodes": 1
+            }
+          ],
+          "passes": 34,
+          "incomplete": 0
+        },
+        "mobile": {
+          "violations": [
+            {
+              "id": "empty-heading",
+              "impact": "minor",
+              "nodes": 1
+            }
+          ],
+          "passes": 34,
+          "incomplete": 1
+        }
+      },
+      "keyboard": {
+        "tabKey": "Tab",
+        "stops": [
+          "ga naar homepagina",
+          "Home",
+          "Info",
+          "Account",
+          "name",
+          "email",
+          "vraag",
+          "Verzend Vraag"
+        ],
+        "withoutVisibleFocus": [
+          "Verzend Vraag"
+        ],
+        "skipLink": {
+          "firstStop": "Vervoerregio\n\nAmsterdam",
+          "works": false
+        }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": {
+        "textLength": 2226,
+        "headings": 6,
+        "links": 8
+      }
+    },
+    "firefox": {
+      "version": "159.0",
+      "performance": {
+        "ttfb": 196,
+        "fcp": 260,
+        "lcp": 260,
+        "cls": null,
+        "domContentLoaded": 256,
+        "load": 1445,
+        "requests": 41,
+        "jsFiles": 0,
+        "failed": [],
+        "consoleErrors": [
+          "[JavaScript Error: \"downloadable font: rejected by sanitizer (font-family: \"Fira Sans\" style:normal weight:700 width:100 src index:0) source: http://localhost:8081/fonts/fira-sans/FiraSans-Bold.woff2\"]",
+          "[JavaScript Error: \"downloadable font: rejected by sanitizer (font-family: \"Fira Sans\" style:normal weight:400 width:100 src index:0) source: http://localhost:8081/fonts/fira-sans/FiraSans-Regular.woff2\"]",
+          "[JavaScript Error: \"downloadable font: rejected by sanitizer (font-family: \"Fira Sans\" style:normal weight:500 width:100 src index:0) source: http://localhost:8081/fonts/fira-sans/FiraSans-Medium.woff2\"]"
+        ]
+      },
+      "a11y": {
+        "desktop": {
+          "violations": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "nodes": 2
+            },
+            {
+              "id": "empty-heading",
+              "impact": "minor",
+              "nodes": 1
+            }
+          ],
+          "passes": 34,
+          "incomplete": 0
+        },
+        "mobile": {
+          "violations": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "nodes": 1
+            },
+            {
+              "id": "empty-heading",
+              "impact": "minor",
+              "nodes": 1
+            }
+          ],
+          "passes": 34,
+          "incomplete": 1
+        }
+      },
+      "keyboard": {
+        "tabKey": "Tab",
+        "stops": [
+          "ga naar homepagina",
+          "Home",
+          "Info",
+          "Account",
+          "name",
+          "email",
+          "vraag",
+          "Verzend Vraag"
+        ],
+        "withoutVisibleFocus": [
+          "Verzend Vraag"
+        ],
+        "skipLink": {
+          "firstStop": "Vervoerregio\n\nAmsterdam",
+          "works": false
+        }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": {
+        "textLength": 2226,
+        "headings": 6,
+        "links": 8
+      }
+    },
+    "webkit": {
+      "version": "27.2",
+      "performance": {
+        "ttfb": 172,
+        "fcp": 228,
+        "lcp": 228,
+        "cls": null,
+        "domContentLoaded": 213,
+        "load": 1041,
+        "requests": 39,
+        "jsFiles": 0,
+        "failed": [],
+        "consoleErrors": []
+      },
+      "a11y": {
+        "desktop": {
+          "violations": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "nodes": 2
+            },
+            {
+              "id": "empty-heading",
+              "impact": "minor",
+              "nodes": 1
+            }
+          ],
+          "passes": 34,
+          "incomplete": 0
+        },
+        "mobile": {
+          "violations": [
+            {
+              "id": "empty-heading",
+              "impact": "minor",
+              "nodes": 1
+            }
+          ],
+          "passes": 34,
+          "incomplete": 1
+        }
+      },
+      "keyboard": {
+        "tabKey": "Alt+Tab",
+        "stops": [
+          "ga naar homepagina",
+          "Home",
+          "Info",
+          "Account",
+          "name",
+          "email",
+          "vraag",
+          "Verzend Vraag"
+        ],
+        "withoutVisibleFocus": [
+          "Verzend Vraag"
+        ],
+        "skipLink": {
+          "firstStop": "Vervoerregio\n\nAmsterdam",
+          "works": false
+        }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": {
+        "textLength": 2224,
+        "headings": 6,
+        "links": 8
+      }
+    }
+  }
+}
