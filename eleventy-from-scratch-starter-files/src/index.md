@@ -1,26 +1,6 @@
 ---
-title: 'Hello, world'
-layout: 'layouts/home.html'
-intro:
-  eyebrow: 'Digital Marketing is our'
-  main: 'Bread & Butter'
-  summary: 'Let us help you create the perfect campaign with our multi-faceted team of talented creatives.'
-  buttonText: 'See our work'
-  buttonUrl: '/work'
-  image: '/images/bg/toast.jpg'
-  imageAlt: 'Buttered toasted white bread'
-featuredWork:
-  title: 'Selected work'
-  summary: 'Some stuff that should give you an idea of what we’re all about.'
-studioFeed:
-  title: 'From inside the studio'
+title: 'Home'
+layout: 'layouts/base.html'
 ---
-primaryCTA:
-  title: 'This is an agency that doesn’t actually exist'
-  summary: 'This is the project site you build when you take the “Learn
-    Eleventy” course so it is all made up as a pretend
-    context. You will learn a lot about Eleventy by building this site
-    though. Take the course today!'
-  buttonText: "It's free!"
-  buttonUrl: 'https://learneleventy.dev'
-This is pretty _rad_, right?
+
+<a href="/info/">Info</a>
