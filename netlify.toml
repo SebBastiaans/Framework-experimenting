@@ -1,0 +1,11 @@
+# Netlify-configuratie voor de Eleventy-versie.
+# Het project staat in een submap, daarom 'base'. 'publish' is relatief aan 'base'.
+[build]
+  base = "eleventy-from-scratch-starter-files"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Playwright is alleen nodig voor de lokale tests, niet voor de build
+  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD = "1"
