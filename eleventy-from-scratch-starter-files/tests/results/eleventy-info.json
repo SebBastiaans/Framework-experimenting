@@ -1,0 +1,156 @@
+{
+  "framework": "Eleventy",
+  "baseUrl": "http://localhost:8081",
+  "date": "2026-11-12T10:04:40.152Z",
+  "runs": 5,
+  "pages": [
+    {
+      "name": "Info",
+      "path": "/info/",
+      "performance": {
+        "desktop": {
+          "ttfb": 2,
+          "fcp": 76,
+          "lcp": 76,
+          "cls": 0,
+          "domContentLoaded": 11,
+          "load": 42,
+          "domNodes": 92,
+          "requests": 12,
+          "totalKB": 731.4,
+          "byType": {
+            "Document": { "count": 1, "kb": 12.9 },
+            "Stylesheet": { "count": 2, "kb": 13 },
+            "Image": { "count": 2, "kb": 25.2 },
+            "Font": { "count": 6, "kb": 679.6 },
+            "Other": { "count": 1, "kb": 0.6 }
+          },
+          "failed": [
+            "404 /fonts/fira-sans/FiraSans-Regular.woff2",
+            "404 /fonts/fira-sans/FiraSans-Bold.woff2",
+            "404 /fonts/fira-sans/FiraSans-Medium.woff2",
+            "404 /favicon.ico"
+          ],
+          "consoleErrors": ["Failed to load resource: the server responded with a status of 404 (File not found)"]
+        },
+        "mobile": {
+          "ttfb": 151,
+          "fcp": 504,
+          "lcp": 504,
+          "cls": 0.02,
+          "domContentLoaded": 221,
+          "load": 4085,
+          "domNodes": 92,
+          "requests": 12,
+          "totalKB": 731.4,
+          "byType": {
+            "Document": { "count": 1, "kb": 12.9 },
+            "Stylesheet": { "count": 2, "kb": 13 },
+            "Image": { "count": 2, "kb": 25.2 },
+            "Font": { "count": 6, "kb": 679.6 },
+            "Other": { "count": 1, "kb": 0.6 }
+          },
+          "failed": [
+            "404 /fonts/fira-sans/FiraSans-Bold.woff2",
+            "404 /fonts/fira-sans/FiraSans-Regular.woff2",
+            "404 /fonts/fira-sans/FiraSans-Medium.woff2",
+            "404 /favicon.ico"
+          ],
+          "consoleErrors": ["Failed to load resource: the server responded with a status of 404 (File not found)"]
+        }
+      },
+      "a11y": {
+        "desktop": {
+          "axe": {
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 3,
+                "details": [
+                  ".text-subcontainer--light > p: 3.64:1 (#ffffff op #7a8f0b)",
+                  "section:nth-child(4) p:nth-child(2): 4.08:1 (#ffffff op #0084c8)",
+                  "section:nth-child(4) p:nth-child(3): 4.08:1 (#ffffff op #0084c8)"
+                ]
+              }
+            ],
+            "passes": 39,
+            "incomplete": []
+          },
+          "structure": {
+            "lang": "nl",
+            "title": "Info",
+            "h1": 1,
+            "headings": "h1 > h2 > h2 > h3 > h2 > h2",
+            "landmarks": { "header": 1, "nav": 1, "main": 1, "footer": 0 },
+            "imagesWithoutAlt": 0,
+            "horizontalScroll": false
+          }
+        },
+        "mobile": {
+          "axe": {
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 1
+              }
+            ],
+            "passes": 37,
+            "incomplete": [
+              { "id": "color-contrast", "help": "Elements must meet minimum color contrast ratio thresholds", "nodes": 7 }
+            ]
+          },
+          "structure": {
+            "lang": "nl",
+            "title": "Info",
+            "h1": 1,
+            "headings": "h1 > h2 > h2 > h3 > h2 > h2",
+            "landmarks": { "header": 1, "nav": 0, "main": 1, "footer": 0 },
+            "imagesWithoutAlt": 0,
+            "horizontalScroll": false
+          }
+        }
+      },
+      "keyboard": {
+        "stops": [
+          { "name": "Jump directly to main content", "tag": "a", "focusVisible": true },
+          { "name": "ga naar homepagina", "tag": "a", "focusVisible": true },
+          { "name": "Home", "tag": "a", "focusVisible": true },
+          { "name": "Info", "tag": "a", "focusVisible": true },
+          { "name": "INPUT", "tag": "input", "focusVisible": true },
+          { "name": "INPUT", "tag": "input", "focusVisible": true },
+          { "name": "TEXTAREA", "tag": "textarea", "focusVisible": true },
+          { "name": "Verzend Vraag", "tag": "button", "focusVisible": false }
+        ],
+        "withoutVisibleFocus": ["Verzend Vraag"],
+        "skipLink": { "firstStop": "Jump directly to main content", "works": true }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "found": true,
+          "buttonName": "open menu",
+          "ariaExpandedAttr": null,
+          "opensWithEnter": true,
+          "ariaExpandedAfterOpen": null,
+          "focusAfterTab": "close menu",
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "found": true,
+          "buttonName": "open menu",
+          "ariaExpandedAttr": null,
+          "opensWithEnter": true,
+          "ariaExpandedAfterOpen": null,
+          "focusAfterTab": "close menu",
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": { "textLength": 2229, "headings": 6, "links": 6 }
+    }
+  ]
+}

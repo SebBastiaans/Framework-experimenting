@@ -1,0 +1,268 @@
+{
+  "framework": "Eleventy",
+  "url": "http://localhost:8081/info/",
+  "date": "2026-11-12T10:09:53.022Z",
+  "runs": 5,
+  "browsers": {
+    "chromium": {
+      "version": "158.0.8127.18",
+      "performance": {
+        "ttfb": 2,
+        "fcp": 24,
+        "lcp": 24,
+        "cls": 0,
+        "domContentLoaded": 6,
+        "load": 26,
+        "requests": 11,
+        "jsFiles": 0,
+        "failed": [
+          "404 /fonts/fira-sans/FiraSans-Regular.woff2",
+          "404 /fonts/fira-sans/FiraSans-Bold.woff2",
+          "404 /fonts/fira-sans/FiraSans-Medium.woff2"
+        ],
+        "consoleErrors": [
+          "Failed to load resource: the server responded with a status of 404 (File not found)"
+        ]
+      },
+      "a11y": {
+        "desktop": {
+          "violations": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "nodes": 3
+            }
+          ],
+          "passes": 39,
+          "incomplete": 0
+        },
+        "mobile": {
+          "violations": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "nodes": 1
+            }
+          ],
+          "passes": 37,
+          "incomplete": 1
+        }
+      },
+      "keyboard": {
+        "tabKey": "Tab",
+        "stops": [
+          "Jump directly to main content",
+          "ga naar homepagina",
+          "Home",
+          "Info",
+          "name",
+          "email",
+          "vraag",
+          "Verzend Vraag"
+        ],
+        "withoutVisibleFocus": [
+          "Verzend Vraag"
+        ],
+        "skipLink": {
+          "firstStop": "Jump directly to main content",
+          "works": true
+        }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": {
+        "textLength": 2229,
+        "headings": 6,
+        "links": 6
+      }
+    },
+    "firefox": {
+      "version": "159.0",
+      "performance": {
+        "ttfb": 2,
+        "fcp": 41,
+        "lcp": 41,
+        "cls": null,
+        "domContentLoaded": 7,
+        "load": 37,
+        "requests": 11,
+        "jsFiles": 0,
+        "failed": [
+          "404 /fonts/fira-sans/FiraSans-Regular.woff2",
+          "404 /fonts/fira-sans/FiraSans-Medium.woff2",
+          "404 /fonts/fira-sans/FiraSans-Bold.woff2"
+        ],
+        "consoleErrors": [
+          "[JavaScript Error: \"downloadable font: download failed (font-family: \"Fira Sans\" style:normal weight:400 width:100 src index:0): status=2147746065 source: http://localhost:8081/fonts/fira-sans/FiraSans-Regular.woff2\"]",
+          "[JavaScript Error: \"downloadable font: download failed (font-family: \"Fira Sans\" style:normal weight:500 width:100 src index:0): status=2147746065 source: http://localhost:8081/fonts/fira-sans/FiraSans-Medium.woff2\"]",
+          "[JavaScript Error: \"downloadable font: download failed (font-family: \"Fira Sans\" style:normal weight:700 width:100 src index:0): status=2147746065 source: http://localhost:8081/fonts/fira-sans/FiraSans-Bold.woff2\"]"
+        ]
+      },
+      "a11y": {
+        "desktop": {
+          "violations": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "nodes": 3
+            }
+          ],
+          "passes": 39,
+          "incomplete": 0
+        },
+        "mobile": {
+          "violations": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "nodes": 2
+            }
+          ],
+          "passes": 37,
+          "incomplete": 1
+        }
+      },
+      "keyboard": {
+        "tabKey": "Tab",
+        "stops": [
+          "Jump directly to main content",
+          "ga naar homepagina",
+          "Home",
+          "Info",
+          "name",
+          "email",
+          "vraag",
+          "Verzend Vraag"
+        ],
+        "withoutVisibleFocus": [
+          "Verzend Vraag"
+        ],
+        "skipLink": {
+          "firstStop": "Jump directly to main content",
+          "works": true
+        }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": {
+        "textLength": 2229,
+        "headings": 6,
+        "links": 6
+      }
+    },
+    "webkit": {
+      "version": "27.2",
+      "performance": {
+        "ttfb": 2,
+        "fcp": 30,
+        "lcp": 30,
+        "cls": null,
+        "domContentLoaded": 6,
+        "load": 14,
+        "requests": 11,
+        "jsFiles": 0,
+        "failed": [
+          "404 /fonts/fira-sans/FiraSans-Regular.woff2",
+          "404 /fonts/fira-sans/FiraSans-Medium.woff2",
+          "404 /fonts/fira-sans/FiraSans-Bold.woff2"
+        ],
+        "consoleErrors": [
+          "Failed to load resource: the server responded with a status of 404 (File not found)"
+        ]
+      },
+      "a11y": {
+        "desktop": {
+          "violations": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "nodes": 3
+            }
+          ],
+          "passes": 39,
+          "incomplete": 0
+        },
+        "mobile": {
+          "violations": [
+            {
+              "id": "color-contrast",
+              "impact": "serious",
+              "nodes": 1
+            }
+          ],
+          "passes": 37,
+          "incomplete": 1
+        }
+      },
+      "keyboard": {
+        "tabKey": "Alt+Tab",
+        "stops": [
+          "Jump directly to main content",
+          "ga naar homepagina",
+          "Home",
+          "Info",
+          "name",
+          "email",
+          "vraag",
+          "Verzend Vraag"
+        ],
+        "withoutVisibleFocus": [
+          "Verzend Vraag"
+        ],
+        "skipLink": {
+          "firstStop": "Jump directly to main content",
+          "works": true
+        }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": {
+        "textLength": 2229,
+        "headings": 6,
+        "links": 6
+      }
+    }
+  }
+}

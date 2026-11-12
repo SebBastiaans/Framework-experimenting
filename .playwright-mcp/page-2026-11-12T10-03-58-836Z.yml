@@ -1,0 +1,23 @@
+- generic [active] [ref=e1]:
+  - link "Jump directly to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - link "ga naar homepagina" [ref=e4] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e9]:
+        - paragraph [ref=e10]: Vervoerregio
+        - paragraph [ref=e11]: Amsterdam
+    - navigation "Hoofdmenu" [ref=e12]:
+      - list [ref=e13]:
+        - listitem [ref=e14]:
+          - link "Home" [ref=e15] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e19]:
+          - link "Info" [ref=e20] [cursor=pointer]:
+            - /url: /info/
+      - generic [ref=e24]: Account
+  - main [ref=e28]:
+    - heading "Home" [level=1] [ref=e29]
+    - paragraph [ref=e30]:
+      - link "Info" [ref=e31] [cursor=pointer]:
+        - /url: /info/
