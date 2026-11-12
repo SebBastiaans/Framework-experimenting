@@ -1,0 +1,56 @@
+{
+	"heading": {
+		"title": "Info",
+		"url": ""
+	},
+	"sections": [
+		{
+			"title": "Vervoerregio Amsterdam HvA",
+			"headingLevel": 2,
+			"paragraphs": [
+				"Wij hebben samen met studenten van de Hogeschool van Amsterdam een praktische en overzichtelijke checklist ontwikkeld. In deze checklist wordt op een eenvoudige en begrijpelijke manier uitgelegd wat er komt kijken bij digitale toegankelijkheid van websites en apps. Daarnaast biedt de checklist concrete handvatten en duidelijke stappen die u kunt nemen om uw website en app toegankelijker te maken voor alle gebruikers, inclusief mensen met een beperking. Op deze manier kunt u stap voor stap werken aan een gebruiksvriendelijke, inclusieve en beter toegankelijke digitale omgeving."
+			]
+		},
+		{
+			"id": "wettelijk",
+			"title": "Is uw website al toegankelijk?",
+			"headingLevel": 2,
+			"variant": "light",
+			"image": "/images/info/walking.svg",
+			"imageAlt": "",
+			"paragraphs": [
+				"Binnen 2025 moet dit al! Voor overheden is dit al verplicht. En vanaf 2025 moet iedere nieuwe website en app digitaal toegankelijk zijn. Dit moet volgens het EAA (European Accessibility Act). Dit zou er mee moeten helpen dat iedereen elke website zou kunnen bezoeken, niet uitmakende dat iemand een beperking heeft."
+			]
+		},
+		{
+			"title": "Wat kunt u doen om uw website toegankelijk te maken?",
+			"headingLevel": 3,
+			"variant": "dark",
+			"paragraphs": [
+				"De Vervoerregio Amsterdam heeft samen met studenten van de Hogeschool van Amsterdam een praktische checklist ontwikkeld waarin op een eenvoudige en toegankelijke manier wordt uitgelegd wat er komt kijken bij het digitaal toegankelijk maken van websites en apps. Daarnaast beschrijft de checklist welke stappen organisaties kunnen nemen om hun website en app toegankelijker en gebruiksvriendelijker te maken voor een brede groep gebruikers, waaronder mensen met een beperking."
+			]
+		},
+		{
+			"title": "Wat is de wettelijke achtergrond?",
+			"headingLevel": 2,
+			"image": "/images/info/knowledge.svg",
+			"imageAlt": "Sharing Knowledge",
+			"paragraphs": [
+				"In Nederland zijn er ca. 2 miljoen mensen met een beperking. Als deze mensen uw website of app niet kunnen gebruiken, dan zorgt dat dat deze mensen worden uitgesloten van de samenleving. Medio 2025 wordt om die reden door de Europese Unie de European Accessibility Act (EAA) of Europese Toegankelijkheidswet ingevoerd.",
+				"De wet zorgt ervoor dat digitale barrières worden verwijderd voor mensen met een beperking. De eisen zijn gebaseerd op de Web Content Accessibility Guidelines (WCAG) van het World Wide Web Consortium."
+			]
+		}
+	],
+	"contact": {
+		"title": "Contact opnemen?",
+		"subtext": "Indien u vragen heeft of mocht er nog enige onduidelijkheid bestaan, kunt u via onderstaand formulier contact met ons opnemen.",
+		"action": "/info",
+		"buttonText": "Verstuur",
+		"buttonLabel": "Verzend Vraag",
+		"fields": [
+			{ "id": "name", "name": "name", "label": "Naam", "type": "text", "placeholder": "naam" },
+			{ "id": "email", "name": "email", "label": "Email", "type": "email", "placeholder": "email" },
+			{ "id": "vraag", "name": "vraag", "label": "Uw vraag", "type": "textarea", "placeholder": "Bericht...", "rows": 3 }
+		]
+	}
+}

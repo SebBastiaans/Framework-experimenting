@@ -1,0 +1,53 @@
+{% extends "layouts/base.html" %}
+{% block content %}
+<h1>
+	{{ info.heading.title }}{% if info.heading.url %}/{{ info.heading.url }}{% endif %}
+</h1>
+
+<div class="info-wrapper">
+	{% for section in info.sections %}
+	<section class="text-container">
+		{% if section.image %}
+		<img src="{{ section.image }}" class="text-image" alt="{{ section.imageAlt }}" />
+		{% endif %}
+
+		{# Secties met een variant of afbeelding krijgen een subcontainer, net als in het origineel #}
+		{% if section.variant or section.image %}
+		<div class="text-subcontainer{% if section.variant %} text-subcontainer--{{ section.variant }}{% endif %}">
+		{% endif %}
+
+			<h{{ section.headingLevel }}{% if section.id %} id="{{ section.id }}"{% endif %}>{{ section.title }}</h{{ section.headingLevel }}>
+			{% for paragraph in section.paragraphs %}
+			<p>{{ paragraph }}</p>
+			{% endfor %}
+
+		{% if section.variant or section.image %}
+		</div>
+		{% endif %}
+	</section>
+	{% endfor %}
+
+	<section class="text-container">
+		<h2>{{ info.contact.title }}</h2>
+		<p class="form-subtext">{{ info.contact.subtext }}</p>
+		<div class="text-subcontainer">
+			{# Statisch formulier: er is geen server die de POST afhandelt #}
+			<form action="{{ info.contact.action }}" method="POST">
+				<fieldset class="form-vraag">
+					{% for field in info.contact.fields %}
+					<label for="{{ field.id }}">{{ field.label }}</label>
+					{% if field.type == "textarea" %}
+					<textarea id="{{ field.id }}" name="{{ field.name }}" placeholder="{{ field.placeholder }}" rows="{{ field.rows }}" required></textarea>
+					{% else %}
+					<input id="{{ field.id }}" type="{{ field.type }}" name="{{ field.name }}" placeholder="{{ field.placeholder }}" required />
+					{% endif %}
+					{% endfor %}
+					<button type="submit" class="button" aria-label="{{ info.contact.buttonLabel }}">
+						{{ info.contact.buttonText }}
+					</button>
+				</fieldset>
+			</form>
+		</div>
+	</section>
+</div>
+{% endblock %}
