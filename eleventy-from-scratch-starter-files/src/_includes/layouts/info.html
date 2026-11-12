@@ -1,8 +1,8 @@
 {% extends "layouts/base.html" %}
 {% block content %}
-<h1>
+<!-- <h1>
 	{{ info.heading.title }}{% if info.heading.url %}/{{ info.heading.url }}{% endif %}
-</h1>
+</h1> -->
 
 <div class="info-wrapper">
 	{% for section in info.sections %}
@@ -11,7 +11,6 @@
 		<img src="{{ section.image }}" class="text-image" alt="{{ section.imageAlt }}" />
 		{% endif %}
 
-		{# Secties met een variant of afbeelding krijgen een subcontainer, net als in het origineel #}
 		{% if section.variant or section.image %}
 		<div class="text-subcontainer{% if section.variant %} text-subcontainer--{{ section.variant }}{% endif %}">
 		{% endif %}
@@ -31,7 +30,6 @@
 		<h2>{{ info.contact.title }}</h2>
 		<p class="form-subtext">{{ info.contact.subtext }}</p>
 		<div class="text-subcontainer">
-			{# Statisch formulier: er is geen server die de POST afhandelt #}
 			<form action="{{ info.contact.action }}" method="POST">
 				<fieldset class="form-vraag">
 					{% for field in info.contact.fields %}

@@ -1,0 +1,417 @@
+:root {
+	color-scheme: light;
+	--color-primary: #b9005f;
+	--color-primary-light: #f1ccdf;
+	--color-primary-lightest: #fbeff5;
+	--color-primary-darkest: #470025;
+
+	/* accent colors */
+	--color-accent-primary: #7b8f0c;
+	--color-accent-secondary: #46becd;
+	--color-accent-tertiary: #0085c8;
+	--color-accent-quaternary: #6e7dbc;
+	--color-accent-success: #167633;
+
+	/* neutral colors */
+	--color-neutral-white: #ffffff;
+	--color-neutral-black: #470026;
+	--color-neutral-darkgrey: #6d495a;
+	--color-neutral-grey: #a9999b;
+
+	/* Card Background */
+	--color-background-card: #fbf0f5;
+
+	/* border radius */
+	--border-radius: 12px;
+
+	/* margin */
+	--margin-inline: 5%;
+
+	/* gap */
+
+	--gap-small: .5em;
+	--gap-medium: 1em;
+	--gap-big: 2em;
+}
+
+/* color system when you put a class to the html element you can specify color tone with class */
+/* Fixed @supports nesting structure so it actually works */
+@supports (color: color-mix(in hsl, white, black)) {
+	.color-primary,
+	.color-primary-light,
+	.color-neutral-white,
+	.color-neutral-black,
+	.color-accent-primary,
+	.color-accent-secondary,
+	.color-accent-tertiary,
+	.color-neutral-darkgrey,
+	.color-neutral-grey {
+		--dark-3: color-mix(in hsl, var(--place-holder) 70%, black 30%);
+		--dark-2: color-mix(in hsl, var(--place-holder) 80%, black 20%);
+		--dark-1: color-mix(in hsl, var(--place-holder) 90%, black 10%);
+		--color: color-mix(in hsl, var(--place-holder) 100%, white 0%);
+		--light-1: color-mix(in hsl, var(--place-holder) 100%, white 2%);
+		--light-2: color-mix(in hsl, var(--place-holder) 100%, white 7%);
+		--light-3: color-mix(in hsl, var(--place-holder) 100%, white 12%);
+	}
+}
+
+@supports (color: oklch(from red l c h)) {
+	.color-primary,
+	.color-primary-light,
+	.color-neutral-white,
+	.color-neutral-black,
+	.color-accent-primary,
+	.color-accent-secondary,
+	.color-accent-tertiary,
+	.color-neutral-darkgrey,
+	.color-neutral-grey {
+		--dark-3: oklch(from var(--place-holder) calc(l - 0.2) calc(c + 0.03) h);
+		--dark-2: oklch(from var(--place-holder) calc(l - 0.1) calc(c + 0.02) h);
+		--dark-1: oklch(from var(--place-holder) calc(l - 0.04) calc(c + 0.01) h);
+		--color: oklch(from var(--place-holder) l c h);
+		--light-1: oklch(from var(--place-holder) calc(l + 0.02) calc(c + 0.01) h);
+		--light-2: oklch(from var(--place-holder) calc(l + 0.04) calc(c + 0.02) h);
+		--light-3: oklch(from var(--place-holder) calc(l + 0.06) calc(c + 0.03) h);
+	}
+}
+
+.color-primary {
+	--place-holder: var(--color-primary);
+}
+
+.color-primary-light {
+	--place-holder: var(--color-primary-light);
+}
+
+.color-white {
+	--place-holder: var(--color-neutral-white); /* Fixed typo here */
+}
+
+.color-black {
+	--place-holder: var(--color-neutral-black); /* Fixed typo here */
+}
+
+.color-accent-primary {
+	--place-holder: var(--color-accent-primary);
+}
+
+.color-accent-secondary {
+	--place-holder: var(--color-accent-secondary);
+}
+
+.color-accent-tertiary {
+	--place-holder: var(--color-accent-tertiary);
+}
+
+.color-neutral-darkgrey {
+	--place-holder: var(--color-neutral-darkgrey);
+}
+
+.color-neutral-grey {
+	--place-holder: var(--color-neutral-grey);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: 'Fira Sans', 'Inter', 'Montserrat', sans-serif;
+}
+
+main {
+	margin: 0 var(--margin-inline);
+}
+
+/* Text styles */
+h1 {
+	font-size: 3rem;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+h3 {
+	font-size: 2rem;
+	font-weight: 400;
+}
+
+p {
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 141.667%;
+	letter-spacing: 0.0025rem;
+}
+
+/* Text from the CMS inside an opened criterion */
+.richtlijn-uitleg p,
+.richtlijn-uitleg ul,
+.richtlijn-uitleg li {
+	padding: 0;
+	font-size: inherit;
+	line-height: 1.5;
+	max-width: 30em;
+}
+
+.richtlijn-uitleg ul {
+	list-style: disc;
+	padding: 1em 0 0 1em;
+}
+
+.richtlijn-uitleg li:not(:first-child) {
+	padding-top: 0.5em;
+}
+
+.disabled {
+	display: none;
+}
+
+main {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+button {
+	background: none;
+	border: none;
+	padding: 0;
+	margin: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+@font-face {
+	font-family: 'Fira Sans';
+	src:
+		url('/fonts/fira-sans/FiraSans-Bold.woff2') format('woff2'),
+		url('/fonts/fira-sans/FiraSans-Bold.woff') format('woff');
+	font-display: swap;
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src:
+		url('/fonts/fira-sans/FiraSans-Medium.woff2') format('woff2'),
+		url('/fonts/fira-sans/FiraSans-Medium.woff') format('woff');
+	font-display: swap;
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src:
+		url('/fonts/fira-sans/FiraSans-Regular.woff2') format('woff2'),
+		url('/fonts/fira-sans/FiraSans-Regular.woff') format('woff');
+	font-display: swap;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src:
+		url('/fonts/fira-sans/FiraSans-Light.woff2') format('woff2'),
+		url('/fonts/fira-sans/FiraSans-Light.woff') format('woff');
+	font-display: swap;
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Fira Sans';
+	src:
+		url('/fonts/fira-sans/FiraSans-ExtraLight.woff2') format('woff2'),
+		url('/fonts/fira-sans/FiraSans-ExtraLight.woff') format('woff');
+	font-display: swap;
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src:
+		url('/fonts/montserrat/static/Montserrat-Regular.woff2') format('woff2'),
+		url('/fonts/montserrat/static/Montserrat-Regular.woff') format('woff');
+	font-display: swap;
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Inter';
+	src:
+		url('/fonts/inter/static/Inter_18pt-Regular.woff2') format('woff2'),
+		url('/fonts/inter/static/Inter_18pt-Regular.woff') format('woff');
+	font-display: swap;
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.text-container {
+    padding: 2em;
+    color: var(--color-neutral-white);
+    background-color: var(--color-primary);
+    height: 45vh;
+}
+
+.text-container:nth-of-type(1) {
+    color: #470026;
+    background-color: white;
+}
+
+.text-container:nth-of-type(2) {
+    color: #ffffff;
+    background-color: #7a8f0b;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.text-container:nth-of-type(3) {
+    color: #470026;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.text-container:nth-of-type(4) {
+    display: flex;
+    align-items: center;
+    background-color: #0084c8;
+}
+
+.text-container:nth-of-type(5) {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: #470026;
+    height: auto;
+}
+
+.text-container p {
+    max-width: 50rem;
+}
+
+.text-image {
+    height: 13em;
+    width: 25%;
+}
+
+.text-subcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.text-subcontainer h3 {
+    font-weight: 700;
+}
+
+.text-subcontainer--light {
+    color: #ffffff;
+}
+
+.text-subcontainer--dark {
+    color: #470026;
+}
+
+form {
+    padding-top: 1.5rem;
+    width: 100%;
+}
+
+.form-subtext {
+    padding-top: 0.4rem;
+}
+
+.form-vraag {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 30rem;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.form-vraag label {
+    color: #470026;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.form-vraag label:first-child {
+    margin-top: 0;
+}
+
+input,
+textarea {
+    background-color: #f9edf3;
+    color: #470026;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #470026;
+    opacity: 0.6;
+}
+
+input {
+    height: 3rem;
+}
+
+textarea {
+    height: auto;
+    min-height: 5rem;
+    resize: vertical;
+}
+
+input:valid {
+    border: 1px solid lightgreen;
+    transition: 0.3s ease-out;
+}
+
+textarea:valid {
+    border: 1px solid lightgreen;
+    transition: 0.2s ease-out;
+}
+
+.text-subcontainer .button {
+    margin-top: 2rem !important;
+    padding: 0.75rem 2rem !important;
+}
+
+.success-message {
+    color: green;
+    margin-top: 1rem;
+}
+
+.error-message {
+    color: red;
+    margin-top: 1rem;
+}
+
