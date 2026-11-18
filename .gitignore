@@ -11,3 +11,5 @@ npm-debug.*
 # Node modules and output
 node_modules
 dist
+# Tests: inlogsessies (bevatten cookies)
+tests/.auth/

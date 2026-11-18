@@ -1,19 +1,29 @@
 // Cross-browser test (Chromium, Firefox, WebKit/Safari) voor de framework-vergelijking.
 // Gebruik:  node tests/scripts/cross-browser.mjs <Framework> <BASE_URL> <pad>
-// Voorbeeld: node tests/scripts/cross-browser.mjs Eleventy http://localhost:8081 /info/
+// Voorbeeld: node tests/scripts/cross-browser.mjs Eleventy http://localhost:8081 /
+// Achter een login: STORAGE_STATE=tests/.auth/sveltekit.json node tests/scripts/cross-browser.mjs SvelteKit http://localhost:8081 /
+// (maak die sessie eerst aan met save-login.mjs)
 // Resultaten komen in tests/results/<framework>/ (de map wordt aangemaakt als hij nog niet bestaat).
 // Pas de testlogica niet aan, zodat alle frameworks identiek getest worden.
 import { chromium, firefox, webkit } from 'playwright';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
-const [framework = 'Eleventy', BASE_URL = 'http://localhost:8081', PATH = '/info/'] = process.argv.slice(2);
+const [framework = 'Eleventy', BASE_URL = 'http://localhost:8081', PATH = '/'] = process.argv.slice(2);
 const URL = BASE_URL + PATH;
 const RUNS = 5;
 const AXE_URL = 'https://cdn.jsdelivr.net/npm/axe-core@4.10.2/axe.min.js';
 const slug = framework.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+// Paginanaam in de bestandsnamen, zodat resultaten van verschillende pagina's elkaar niet overschrijven.
+const pageSlug = PATH === '/' ? 'home' : PATH.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').toLowerCase();
 const OUT_DIR = new globalThis.URL(`../results/${slug}/`, import.meta.url);
 const SHOT_DIR = new globalThis.URL(`../results/${slug}/screenshots/`, import.meta.url);
+
+// Optioneel: een opgeslagen inlogsessie, voor pagina's achter een login.
+// Elke context krijgt dezelfde cookies; verder blijft de test identiek.
+const STORAGE_STATE = process.env.STORAGE_STATE || null;
+const newContext = (browser, options) =>
+	browser.newContext(STORAGE_STATE ? { ...options, storageState: STORAGE_STATE } : options);
 
 const DESKTOP = { viewport: { width: 1280, height: 800 } };
 const MOBILE = { viewport: { width: 390, height: 844 } };
@@ -31,7 +41,7 @@ const round = (v) => (v == null ? null : Math.round(v));
 const tabKey = (name) => (name === 'webkit' ? 'Alt+Tab' : 'Tab');
 
 async function measureLoad(browser) {
-	const ctx = await browser.newContext(DESKTOP);
+	const ctx = await newContext(browser, DESKTOP);
 	const p = await ctx.newPage();
 	const failed = [];
 	let requests = 0;
@@ -80,7 +90,7 @@ async function measureLoad(browser) {
 }
 
 async function auditA11y(browser, options) {
-	const ctx = await browser.newContext(options);
+	const ctx = await newContext(browser, options);
 	const p = await ctx.newPage();
 	await p.goto(URL, { waitUntil: 'load' });
 	await p.addScriptTag({ url: AXE_URL });
@@ -99,7 +109,7 @@ async function auditA11y(browser, options) {
 }
 
 async function auditKeyboard(browser, name) {
-	const ctx = await browser.newContext(DESKTOP);
+	const ctx = await newContext(browser, DESKTOP);
 	const p = await ctx.newPage();
 	await p.goto(URL, { waitUntil: 'load' });
 	const stops = [];
@@ -138,7 +148,7 @@ async function auditKeyboard(browser, name) {
 }
 
 async function auditMobileMenu(browser, name, javaScriptEnabled) {
-	const ctx = await browser.newContext({ ...MOBILE, javaScriptEnabled });
+	const ctx = await newContext(browser, { ...MOBILE, javaScriptEnabled });
 	const p = await ctx.newPage();
 	await p.goto(URL, { waitUntil: 'load' });
 	const r = {
@@ -151,35 +161,47 @@ async function auditMobileMenu(browser, name, javaScriptEnabled) {
 		return r;
 	}
 	r.found = true;
-	const infoLinkVisible = () =>
+	// Indexen (in DOM-volgorde) van zichtbare links naar /info. Alleen links die
+	// pas na het openen zichtbaar worden tellen als menu-links, zodat een info-link
+	// in de content van de pagina de uitkomst niet beïnvloedt.
+	const visibleInfoLinks = () =>
 		p.evaluate(() =>
-			[...document.querySelectorAll('a[href]')].some((a) => {
-				const b = a.getBoundingClientRect();
-				return /info/.test(a.getAttribute('href')) && b.width > 0 && b.height > 0 && b.right > 0 && b.left < innerWidth && getComputedStyle(a).visibility !== 'hidden';
-			}),
+			[...document.querySelectorAll('a[href]')]
+				.map((a, i) => {
+					const b = a.getBoundingClientRect();
+					return /info/.test(a.getAttribute('href')) && b.width > 0 && b.height > 0 && b.right > 0 && b.left < innerWidth && getComputedStyle(a).visibility !== 'hidden' ? i : -1;
+				})
+				.filter((i) => i >= 0),
 		);
+	const before = await visibleInfoLinks();
+	let menuLinks = [];
+	const infoLinkVisible = async () => {
+		const now = await visibleInfoLinks();
+		return menuLinks.some((i) => now.includes(i));
+	};
 	await btn.focus();
 	await p.keyboard.press('Enter');
 	await p.waitForTimeout(600);
-	r.opensWithEnter = await infoLinkVisible();
+	menuLinks = (await visibleInfoLinks()).filter((i) => !before.includes(i));
+	r.opensWithEnter = menuLinks.length > 0;
 	if (javaScriptEnabled) {
-		await p.screenshot({ path: fileURLToPath(new globalThis.URL(`${slug}-${name}-menu-open.png`, SHOT_DIR)) });
+		await p.screenshot({ path: fileURLToPath(new globalThis.URL(`${slug}-${pageSlug}-${name}-menu-open.png`, SHOT_DIR)) });
 	}
 	await p.keyboard.press('Escape');
 	await p.waitForTimeout(600);
-	r.closesWithEscape = !(await infoLinkVisible());
+	r.closesWithEscape = r.opensWithEnter && !(await infoLinkVisible());
 	r.focusReturnsToButton = await p.evaluate(() =>
 		/menu/i.test(document.activeElement?.getAttribute('aria-label') || document.activeElement?.innerText || ''),
 	);
 	if (javaScriptEnabled) {
-		await p.screenshot({ path: fileURLToPath(new globalThis.URL(`${slug}-${name}-mobile.png`, SHOT_DIR)) });
+		await p.screenshot({ path: fileURLToPath(new globalThis.URL(`${slug}-${pageSlug}-${name}-mobile.png`, SHOT_DIR)) });
 	}
 	await ctx.close();
 	return r;
 }
 
 async function auditNoJs(browser) {
-	const ctx = await browser.newContext({ ...MOBILE, javaScriptEnabled: false });
+	const ctx = await newContext(browser, { ...MOBILE, javaScriptEnabled: false });
 	const p = await ctx.newPage();
 	await p.goto(URL, { waitUntil: 'load' });
 	const r = await p.evaluate(() => ({
@@ -192,7 +214,21 @@ async function auditNoJs(browser) {
 }
 
 await mkdir(SHOT_DIR, { recursive: true });
-const results = { framework, url: URL, date: new Date().toISOString(), runs: RUNS, browsers: {} };
+const results = { framework, url: URL, loggedIn: !!STORAGE_STATE, date: new Date().toISOString(), runs: RUNS, browsers: {} };
+
+// Controle vooraf: komen we echt op de gevraagde pagina, of word je doorgestuurd (bijv. naar een login)?
+{
+	const browser = await chromium.launch();
+	const ctx = await newContext(browser, DESKTOP);
+	const p = await ctx.newPage();
+	await p.goto(URL, { waitUntil: 'load' });
+	results.finalUrl = p.url();
+	await browser.close();
+	if (new globalThis.URL(results.finalUrl).pathname !== new globalThis.URL(URL).pathname) {
+		console.error(`Let op: ${URL} stuurt door naar ${results.finalUrl}. Ben je ingelogd (STORAGE_STATE)?`);
+		process.exit(1);
+	}
+}
 
 for (const [name, type] of Object.entries({ chromium, firefox, webkit })) {
 	console.log(`> ${name}`);
@@ -225,6 +261,6 @@ for (const [name, type] of Object.entries({ chromium, firefox, webkit })) {
 	await browser.close();
 }
 
-const file = new globalThis.URL(`${slug}-cross-browser.json`, OUT_DIR);
+const file = new globalThis.URL(`${slug}-${pageSlug}-cross-browser.json`, OUT_DIR);
 await writeFile(file, JSON.stringify(results, null, 2));
 console.log(JSON.stringify(results, null, 2));

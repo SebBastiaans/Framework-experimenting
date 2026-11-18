@@ -1,12 +1,14 @@
 // Playwright-audit (Chromium) voor de framework-vergelijking.
 // Uitvoeren via de Playwright MCP-tool `browser_run_code_unsafe` met dit bestand als `filename`.
-// De JSON-uitkomst opslaan als tests/results/<framework>/<framework>-info.json.
+// De JSON-uitkomst opslaan als tests/results/<framework>/<framework>-home.json.
 // Pas alleen CONFIG aan; laat de rest gelijk zodat alle frameworks identiek getest worden.
+// Pagina achter een login? Log eerst in in de Playwright MCP-browser; de cookies blijven
+// in die browser staan en gelden dan voor alle metingen hieronder.
 async (page) => {
 	const CONFIG = {
 		framework: 'Eleventy',
 		BASE_URL: 'http://localhost:8081',
-		pages: [{ name: 'Info', path: '/info/' }],
+		pages: [{ name: 'Home', path: '/' }],
 		runs: 5, // aantal metingen per pagina/profiel, we rapporteren de mediaan
 		axeUrl: 'https://cdn.jsdelivr.net/npm/axe-core@4.10.2/axe.min.js',
 	};
@@ -200,20 +202,24 @@ async (page) => {
 		result.found = true;
 		result.buttonName = (await btn.getAttribute('aria-label')) || (await btn.innerText());
 		result.ariaExpandedAttr = await btn.getAttribute('aria-expanded');
+		// Indexen (in DOM-volgorde) van zichtbare links naar /info. Alleen links die
+		// pas na het openen zichtbaar worden tellen als menu-links, zodat een info-link
+		// in de content van de pagina de uitkomst niet beïnvloedt.
+		const visibleInfoLinks = async () =>
+			p.evaluate(() =>
+				[...document.querySelectorAll('a[href]')]
+					.map((a, i) => {
+						const r = a.getBoundingClientRect();
+						return /info/.test(a.getAttribute('href')) && r.width > 0 && r.height > 0 && r.right > 0 && r.left < innerWidth && getComputedStyle(a).visibility !== 'hidden' ? i : -1;
+					})
+					.filter((i) => i >= 0),
+			);
+		const before = await visibleInfoLinks();
 		await btn.focus();
 		await p.keyboard.press('Enter');
 		await p.waitForTimeout(600);
-		const visibleLinks = async () =>
-			p.evaluate(() =>
-				[...document.querySelectorAll('a[href]')]
-					.filter((a) => {
-						const r = a.getBoundingClientRect();
-						return r.width > 0 && r.height > 0 && r.right > 0 && r.left < innerWidth && getComputedStyle(a).visibility !== 'hidden';
-					})
-					.map((a) => a.getAttribute('href')),
-			);
-		const linksOpen = await visibleLinks();
-		result.opensWithEnter = linksOpen.some((h) => /info/.test(h));
+		const menuLinks = (await visibleInfoLinks()).filter((i) => !before.includes(i));
+		result.opensWithEnter = menuLinks.length > 0;
 		result.ariaExpandedAfterOpen = await btn.getAttribute('aria-expanded');
 		await p.keyboard.press('Tab');
 		result.focusAfterTab = await p.evaluate(
@@ -221,8 +227,8 @@ async (page) => {
 		);
 		await p.keyboard.press('Escape');
 		await p.waitForTimeout(600);
-		const linksClosed = await visibleLinks();
-		result.closesWithEscape = !linksClosed.some((h) => /info/.test(h)) || linksClosed.length < linksOpen.length;
+		const linksClosed = await visibleInfoLinks();
+		result.closesWithEscape = result.opensWithEnter && !menuLinks.some((i) => linksClosed.includes(i));
 		result.focusReturnsToButton = await p.evaluate(
 			() => /menu/i.test(document.activeElement?.getAttribute('aria-label') || document.activeElement?.innerText || ''),
 		);
@@ -244,11 +250,28 @@ async (page) => {
 	}
 
 	// ---------- Uitvoeren ----------
-	const results = { framework: CONFIG.framework, baseUrl: CONFIG.BASE_URL, date: new Date().toISOString(), runs: CONFIG.runs, pages: [] };
+	const results = {
+		framework: CONFIG.framework,
+		baseUrl: CONFIG.BASE_URL,
+		loggedIn: (await context.cookies(CONFIG.BASE_URL)).length > 0,
+		date: new Date().toISOString(),
+		runs: CONFIG.runs,
+		pages: [],
+	};
 
 	for (const pg of CONFIG.pages) {
 		const url = CONFIG.BASE_URL + pg.path;
-		const entry = { name: pg.name, path: pg.path, performance: {}, a11y: {}, keyboard: null, mobileMenu: null, noJs: null };
+
+		// Controle vooraf: komen we echt op de gevraagde pagina, of word je doorgestuurd (bijv. naar een login)?
+		const check = await context.newPage();
+		await check.goto(url, { waitUntil: 'load' });
+		const finalUrl = check.url();
+		await check.close();
+		if (new URL(finalUrl).pathname !== new URL(url).pathname) {
+			return `Let op: ${url} stuurt door naar ${finalUrl}. Log eerst in in deze browser.`;
+		}
+
+		const entry = { name: pg.name, path: pg.path, finalUrl, performance: {}, a11y: {}, keyboard: null, mobileMenu: null, noJs: null };
 
 		for (const [profileName, profile] of Object.entries(PROFILES)) {
 			const runs = [];
