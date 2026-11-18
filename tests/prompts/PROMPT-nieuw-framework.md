@@ -11,11 +11,12 @@ Kopieer na afloop de nieuwe map `tests/results/<framework>/` en de bijgewerkte `
 ---
 
 ```
-Ik vergelijk frameworks op performance en toegankelijkheid. In tests/results/ staan de resultaten van de frameworks die ik al getest heb, elk in een eigen map. Voer nu exact dezelfde tests uit op de /info-pagina van dit project en schrijf de resultaten op voor mijn GitHub Wiki.
+Ik vergelijk frameworks op performance en toegankelijkheid. In tests/results/ staan de resultaten van de frameworks die ik al getest heb, elk in een eigen map. Voer nu exact dezelfde tests uit op de homepage (/) van dit project en schrijf de resultaten op voor mijn GitHub Wiki.
 
 Info over dit project:
 - Framework + versie: [bijv. Astro 5]
-- De info-pagina staat op route: [bijv. /info]
+- De homepage staat op route: [meestal /]
+- Zit de homepage achter een login: [ja/nee, en zo ja de URL van de loginpagina]
 - Bijzonderheden: [bijv. adapter, rendermodus (static/SSR), of "geen"]
 
 Gebruik in alle paden en bestandsnamen de framework-naam in kleine letters, zonder spaties. Die noem ik hieronder <slug>, bijv. "astro".
@@ -25,23 +26,24 @@ Stappen:
 1. Maak een productie-build. Gebruik niet de dev-server, want die levert ongebundelde code en extra dev-scripts.
    - Levert de build statische bestanden op, serveer die map dan met `python3 -m http.server 8081 --directory <buildmap>`. Dat is dezelfde server als bij Eleventy, dus de eerlijkste vergelijking.
    - Heeft het framework een server nodig (SSR), gebruik dan het eigen preview- of start-commando op poort 8081. Noteer dit verschil bij de beperkingen.
-   Start de server op de achtergrond en controleer dat de info-pagina laadt.
+   Start de server op de achtergrond en controleer dat de homepage laadt. Zit hij achter een login, sla dan eerst een sessie op met `node tests/scripts/save-login.mjs <Framework-naam> <login-URL>` en log ook in in de Playwright MCP-browser.
 
 2. Test A: Chromium-audit via de Playwright MCP
    a. Open `tests/scripts/playwright-audit.js`. Pas ALLEEN het CONFIG-blok aan:
       - framework: '<Framework-naam>'
       - BASE_URL: 'http://localhost:8081'
-      - pages: [{ name: 'Info', path: '<de route van de info-pagina>' }]
+      - pages: [{ name: 'Home', path: '<de route van de homepage>' }]
       Verander niets aan de testlogica, de profielen, het aantal runs of de axe-versie. Anders zijn de resultaten niet te vergelijken.
-   b. Open met de Playwright MCP eerst de BASE_URL (browser_navigate). Voer daarna het script uit met browser_run_code_unsafe en het absolute pad naar tests/scripts/playwright-audit.js als `filename`. Sla de JSON-uitkomst op als `tests/results/<slug>/<slug>-info.json`.
-   c. Zijn er axe-overtredingen, voer dan een extra axe-run uit (zelfde versie, 4.10.2) om per element de selector en de foutmelding op te halen. Zet die als "details" in de JSON, net als in tests/results/eleventy/eleventy-info.json.
+   b. Open met de Playwright MCP eerst de BASE_URL (browser_navigate). Voer daarna het script uit met browser_run_code_unsafe en het absolute pad naar tests/scripts/playwright-audit.js als `filename`. Sla de JSON-uitkomst op als `tests/results/<slug>/<slug>-home.json`.
+   c. Zijn er axe-overtredingen, voer dan een extra axe-run uit (zelfde versie, 4.10.2) om per element de selector en de foutmelding op te halen. Zet die als "details" in de JSON, net als in tests/results/eleventy/eleventy-info.json (die heeft een voorbeeld van "details").
    d. Neem het aantal JavaScript-bestanden en de KB per bestand op in het rapport.
 
 3. Test B: cross-browser (Chromium, Firefox, WebKit)
    a. Installeer Playwright als devDependency in exact dezelfde versie als bij de andere frameworks, plus de browsers:
       `npm i -D playwright@1.65.0 && npx playwright install chromium firefox webkit`
    b. Voer het script uit, zonder het aan te passen:
-      `node tests/scripts/cross-browser.mjs <Framework-naam> http://localhost:8081 <de route van de info-pagina>`
+      `node tests/scripts/cross-browser.mjs <Framework-naam> http://localhost:8081 <de route van de homepage>`
+      Achter een login: zet `STORAGE_STATE=tests/.auth/<slug>.json` voor het commando.
       Het script schrijft `tests/results/<slug>/<slug>-cross-browser.json` en screenshots naar `tests/results/<slug>/screenshots/`.
    c. Bekijk de screenshots van het mobiele menu per browser en meld visuele verschillen tussen de browsers.
 
