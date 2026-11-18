@@ -3,10 +3,9 @@
 	}
 
 	.subheader-layout{
-		margin: var(--margin-inline);
+		margin-block: var(--gap-medium);
 		display: grid;
-		grid-template-areas: 
-		'heading'
+		grid-template-areas:
 		'addbtn'
 		'breadcr'
 		'filter'
@@ -21,4 +20,225 @@
 				'heading addbtn  search'
 				'breadcr filter  filter';
 		}
+	}
+
+	/* global.css geeft elk form padding-top en width: 100% */
+	.search form,
+	.sort,
+	.filter-menu {
+		padding-top: 0;
+		width: auto;
+	}
+
+	/* Add button */
+
+	.add-btn{
+		display: flex;
+		align-items: center;
+		gap: var(--gap-small);
+		grid-area: addbtn;
+
+		@container (width > 740px){
+			justify-content: flex-end;
+		}
+	}
+
+	.add-btn p{
+		font-weight: bold;
+	}
+
+	.add-btn p::after{
+		content: ':' / '';
+	}
+
+	.add-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 3em;
+		height: 3em;
+		box-sizing: border-box;
+		border-radius: var(--border-radius, 8px);
+		background-color: var(--color-primary);
+		color: var(--color-neutral-white);
+		text-decoration: none;
+	}
+
+	.add-button:hover {
+		filter: brightness(1.1);
+	}
+
+	.add-button:focus-visible {
+		outline: 2px solid var(--color-primary);
+		outline-offset: 2px;
+	}
+
+	/* Search */
+
+	.search {
+		grid-area: search;
+	}
+
+	.search form {
+		display: flex;
+		align-items: center;
+		gap: var(--gap-medium);
+		font-weight: 600;
+
+		@container (width > 740px){
+			justify-content: flex-end;
+		}
+	}
+
+	.search input {
+		padding: 0.5em;
+		height: 2.5em;
+		border: 2px solid var(--color-neutral-black);
+		background-color: var(--color-neutral-white);
+		border-radius: var(--border-radius);
+		color: var(--color-neutral-black);
+		font-size: 1em;
+		font-weight: 600;
+	}
+
+	.search input::placeholder {
+		color: var(--color-primary);
+		opacity: 0.8;
+	}
+
+	/* Filter */
+
+	.filter {
+		grid-area: breadcr;
+	}
+
+	.filter-btn {
+		border-radius: 4px;
+		background-color: var(--color-primary-light);
+		color: var(--color-neutral-black);
+		height: 2.2em;
+		font-weight: bold;
+		padding: 0 0.6em;
+		width: fit-content;
+		display: flex;
+		align-items: center;
+		gap: var(--gap-small);
+		anchor-name: --filter-btn;
+	}
+
+	.filter-btn:has(+ .filter-menu:popover-open) {
+		border-radius: 4px 4px 0 0;
+	}
+
+	/* alleen als hij open is, anders overschrijft dit de display: none van de browser voor een gesloten popover */
+	.filter-menu:popover-open {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--gap-small);
+		position-anchor: --filter-btn;
+		inset: auto;
+		top: anchor(bottom);
+		left: anchor(left);
+		margin: 0;
+		padding: var(--gap-small);
+		border: none;
+		background-color: var(--color-primary-light);
+		border-radius: 0 4px 4px 4px;
+		box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.234);
+		min-width: 9.5em;
+
+		select {
+			height: 2.2em;
+			padding: 0 0.4em;
+			border: 2px solid var(--color-neutral-black);
+			border-radius: 4px;
+			background-color: var(--color-neutral-white);
+			color: var(--color-neutral-black);
+			font: inherit;
+		}
+
+		button {
+			height: 2.2em;
+			padding: 0 0.8em;
+			border-radius: 4px;
+			background-color: var(--color-primary);
+			color: var(--color-neutral-white);
+			font-weight: bold;
+
+			&:hover {
+				filter: brightness(1.1);
+			}
+		}
+	}
+
+	.filter button:focus-visible,
+	.filter select:focus-visible {
+		outline: 2px solid var(--color-primary);
+		outline-offset: 2px;
+	}
+
+	@media print {
+		.filter {
+			display: none;
+		}
+	}
+
+	/* Sort */
+
+	.sort {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		align-content: flex-start;
+		justify-content: flex-end;
+		gap: var(--gap-small) var(--gap-big);
+		flex-direction: column;
+		grid-area: filter;
+
+		@container (width > 740px) {
+			flex-direction: row;
+		}
+	}
+
+	.sort-field {
+		display: flex;
+		align-items: center;
+		gap: var(--gap-small);
+	}
+
+	.sort-field label {
+		font-weight: bold;
+	}
+
+	/* selects passen zich aan hun inhoud aan, zodat de velden naast elkaar blijven */
+	.sort-field select {
+		width: auto;
+		height: 2.2em;
+		padding: 0 0.4em;
+		border: 2px solid var(--color-neutral-black);
+		border-radius: 4px;
+		background-color: var(--color-neutral-white);
+		color: var(--color-neutral-black);
+		font: inherit;
+	}
+
+	.sort button {
+		height: 2.2em;
+		padding: 0 0.8em;
+		border-radius: 4px;
+		background-color: var(--color-primary);
+		color: var(--color-neutral-white);
+		font-weight: bold;
+	}
+
+	.sort button:hover {
+		filter: brightness(1.1);
+	}
+
+	.sort button:focus-visible,
+	.sort-field select:focus-visible {
+		outline: 2px solid var(--color-primary);
+		outline-offset: 2px;
 	}

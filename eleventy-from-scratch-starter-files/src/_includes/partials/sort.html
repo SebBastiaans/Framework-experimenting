@@ -1,0 +1,17 @@
+{% if sorting.length > 0 %}
+	<form method="GET" action="" class="sort" aria-label="Sorteren">
+		{% for field in sorting %}
+			{# houdt een label en zijn select bij elkaar als de velden wrappen #}
+			<div class="sort-field">
+				<label for="sort-{{ field.name }}">{{ field.label }}</label>
+				<select id="sort-{{ field.name }}" name="{{ field.name }}">
+					{% for option in field.options %}
+						<option value="{{ option.value }}"{% if option.value == field.value %} selected{% endif %}>{{ option.label }}</option>
+					{% endfor %}
+				</select>
+			</div>
+		{% endfor %}
+
+		<button type="submit">Toepassen</button>
+	</form>
+{% endif %}

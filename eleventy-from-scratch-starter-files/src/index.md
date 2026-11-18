@@ -1,6 +1,6 @@
 ---
 title: 'Home'
-layout: 'layouts/base.html'
+layout: 'layouts/home.html'
 ---
 
 <h1 class="visually-hidden">{{ title }}</h1>

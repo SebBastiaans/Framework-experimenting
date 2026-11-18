@@ -1,0 +1,83 @@
+- generic [active] [ref=e1]:
+  - link "Jump directly to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=e3]:
+    - link "ga naar homepagina" [ref=e4] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e9]:
+        - paragraph [ref=e10]: Vervoerregio
+        - paragraph [ref=e11]: Amsterdam
+    - navigation "Hoofdmenu" [ref=e12]:
+      - list [ref=e13]:
+        - listitem [ref=e14]:
+          - link "Home" [ref=e15] [cursor=pointer]:
+            - /url: /
+        - listitem [ref=e19]:
+          - link "Info" [ref=e20] [cursor=pointer]:
+            - /url: /info/
+      - generic [ref=e24]: Account
+  - main [ref=e28]:
+    - generic [ref=e30]:
+      - heading "Home pagina" [level=1] [ref=e31]
+      - generic [ref=e32]:
+        - paragraph [aria-hidden] [ref=e33]: Website toevoegen
+        - link "Website toevoegen" [ref=e34] [cursor=pointer]:
+          - /url: "#"
+      - search [ref=e37]:
+        - search [ref=e38]:
+          - generic [ref=e39]: Zoek een partner
+          - searchbox "Zoek een partner" [ref=e40]
+      - button "Filter pagina" [ref=e42] [cursor=pointer]
+    - generic [ref=e45]:
+      - article [ref=e47]:
+        - img "logo van GVB" [ref=e49]
+        - generic [ref=e50]:
+          - heading [level=2] [ref=e51]:
+            - link "GVB" [ref=e52] [cursor=pointer]:
+              - /url: /gvb/
+          - generic [ref=e53]:
+            - progressbar "0%" [ref=e54]
+            - generic [ref=e55]: 0%
+          - generic [ref=e56]:
+            - button "start audit GVB" [ref=e57] [cursor=pointer]
+            - button "bewerk GVB" [ref=e62] [cursor=pointer]
+            - button "verwijder GVB" [ref=e65] [cursor=pointer]
+      - article [ref=e70]:
+        - img "logo van Angular" [ref=e72]
+        - generic [ref=e73]:
+          - heading [level=2] [ref=e74]:
+            - link "Angular" [ref=e75] [cursor=pointer]:
+              - /url: /angular/
+          - generic [ref=e76]:
+            - progressbar "0%" [ref=e77]
+            - generic [ref=e78]: 0%
+          - generic [ref=e79]:
+            - button "start audit Angular" [ref=e80] [cursor=pointer]
+            - button "bewerk Angular" [ref=e85] [cursor=pointer]
+            - button "verwijder Angular" [ref=e88] [cursor=pointer]
+      - article [ref=e93]:
+        - img "logo van Fdnd" [ref=e95]
+        - generic [ref=e96]:
+          - heading [level=2] [ref=e97]:
+            - link "Fdnd" [ref=e98] [cursor=pointer]:
+              - /url: /fdnd-/
+          - generic [ref=e99]:
+            - progressbar "0%" [ref=e100]
+            - generic [ref=e101]: 0%
+          - generic [ref=e102]:
+            - button "start audit Fdnd" [ref=e103] [cursor=pointer]
+            - button "bewerk Fdnd" [ref=e108] [cursor=pointer]
+            - button "verwijder Fdnd" [ref=e111] [cursor=pointer]
+      - article [ref=e116]:
+        - img "logo van Rijksoverheid" [ref=e118]
+        - generic [ref=e119]:
+          - heading [level=2] [ref=e120]:
+            - link "Rijksoverheid" [ref=e121] [cursor=pointer]:
+              - /url: /rijksoverheid/
+          - generic [ref=e122]:
+            - progressbar "0%" [ref=e123]
+            - generic [ref=e124]: 0%
+          - generic [ref=e125]:
+            - button "start audit Rijksoverheid" [ref=e126] [cursor=pointer]
+            - button "bewerk Rijksoverheid" [ref=e131] [cursor=pointer]
+            - button "verwijder Rijksoverheid" [ref=e134] [cursor=pointer]

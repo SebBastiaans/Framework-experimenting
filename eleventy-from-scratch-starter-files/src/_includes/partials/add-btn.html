@@ -1,0 +1,10 @@
+{% set addLabel = addLabel | default("Website toevoegen") %}
+{% set addHref = addHref | default("#") %}
+
+<div class="add-btn">
+	<p aria-hidden="true">{{ addLabel }}</p>
+
+	<a href="{{ addHref }}" class="add-button" aria-label="{{ addLabel }}">
+		{% include "icons/add.svg" %}
+	</a>
+</div>
