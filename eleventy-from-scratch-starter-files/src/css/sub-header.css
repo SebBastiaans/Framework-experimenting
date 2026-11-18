@@ -1,0 +1,24 @@
+	.subheader-container{
+		container-type: inline-size;
+	}
+
+	.subheader-layout{
+		margin: var(--margin-inline);
+		display: grid;
+		grid-template-areas: 
+		'heading'
+		'addbtn'
+		'breadcr'
+		'filter'
+		'search';
+		gap: var(--gap-small);
+	}
+
+	@container (width > 740px) {
+		.subheader-layout {
+			grid-template-columns: 1fr auto auto;
+			grid-template-areas:
+				'heading addbtn  search'
+				'breadcr filter  filter';
+		}
+	}

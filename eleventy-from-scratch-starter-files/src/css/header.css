@@ -52,9 +52,8 @@ header {
 }
 
 .active {
-	transition-duration: 0.3s;
-	border-bottom: 5px solid var(--color-neutral-white);
-	border-radius: 12px 12px 0 0;
+	filter: brightness(1.1);
+	padding: .5rem 1rem;
 }
 /* Logo (src/_includes/partials/logo.html)
    In Svelte golden deze regels alleen binnen het Logo-component,
