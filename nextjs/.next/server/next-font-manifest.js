@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/sbe3/Documents/school/eleventy-from-scratch/11ty/nextjs/src/app/layout":["static/media/7d4881bb7e1bf84d-s.p.woff2","static/media/22a5144ee8d83bca-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';
