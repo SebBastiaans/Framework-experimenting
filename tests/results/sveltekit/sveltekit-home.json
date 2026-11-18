@@ -1,0 +1,281 @@
+{
+  "framework": "SvelteKit",
+  "baseUrl": "http://localhost:8081",
+  "loggedIn": true,
+  "date": "2026-11-18T21:07:43.992Z",
+  "runs": 5,
+  "pages": [
+    {
+      "name": "Home",
+      "path": "/",
+      "finalUrl": "http://localhost:8081/",
+      "performance": {
+        "desktop": {
+          "ttfb": 405,
+          "fcp": 492,
+          "lcp": 512,
+          "cls": 0.004,
+          "domContentLoaded": 448,
+          "load": 1360,
+          "domNodes": 485,
+          "requests": 40,
+          "totalKB": 781.5,
+          "byType": {
+            "Document": { "count": 1, "kb": 12.9 },
+            "Stylesheet": { "count": 7, "kb": 9.2 },
+            "Script": { "count": 21, "kb": 63.4 },
+            "Image": { "count": 4, "kb": 7.1 },
+            "Font": { "count": 6, "kb": 679.7 },
+            "Other": { "count": 1, "kb": 9.1 }
+          },
+          "failed": [
+            "404 /fonts/fira-sans/FiraSans-Medium.woff2",
+            "404 /fonts/fira-sans/FiraSans-Regular.woff2",
+            "404 /fonts/fira-sans/FiraSans-Bold.woff2",
+            "404 /$lib/assets/svglogo.ico"
+          ],
+          "consoleErrors": ["Failed to load resource: the server responded with a status of 404 (Not Found)"]
+        },
+        "mobile": {
+          "ttfb": 347,
+          "fcp": 1060,
+          "lcp": 1060,
+          "cls": 0.002,
+          "domContentLoaded": 1022,
+          "load": 5064,
+          "domNodes": 485,
+          "requests": 40,
+          "totalKB": 781.5,
+          "byType": {
+            "Document": { "count": 1, "kb": 12.9 },
+            "Stylesheet": { "count": 7, "kb": 9.2 },
+            "Image": { "count": 4, "kb": 7.1 },
+            "Script": { "count": 21, "kb": 63.4 },
+            "Font": { "count": 6, "kb": 679.7 },
+            "Other": { "count": 1, "kb": 9.1 }
+          },
+          "failed": [
+            "404 /fonts/fira-sans/FiraSans-Bold.woff2",
+            "404 /fonts/fira-sans/FiraSans-Regular.woff2",
+            "404 /fonts/fira-sans/FiraSans-Medium.woff2",
+            "404 /$lib/assets/svglogo.ico"
+          ],
+          "consoleErrors": ["Failed to load resource: the server responded with a status of 404 (Not Found)"]
+        }
+      },
+      "a11y": {
+        "desktop": {
+          "axe": {
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 1,
+                "details": ["#partner-search (placeholder zoekveld): 1.97:1 (#c8b3be op #ffffff)"]
+              },
+              {
+                "id": "empty-heading",
+                "impact": "minor",
+                "help": "Headings should not be empty",
+                "nodes": 1,
+                "details": ["h1: heeft geen tekst die een schermlezer kan voorlezen"]
+              },
+              {
+                "id": "link-name",
+                "impact": "serious",
+                "help": "Links must have discernible text",
+                "nodes": 1,
+                "details": [".scroll-color-override > a[href$=\"#main\"]: skip link zonder tekst voor schermlezers"]
+              },
+              {
+                "id": "region",
+                "impact": "moderate",
+                "help": "All page content should be contained by landmarks",
+                "nodes": 2,
+                "details": [".add-button: staat buiten een landmark", ".subheader-layout > .svelte-ktzq9t: staat buiten een landmark"]
+              },
+              {
+                "id": "target-size",
+                "impact": "serious",
+                "help": "All touch targets must be 24px large, or leave sufficient space",
+                "nodes": 1,
+                "details": ["#filter-sort > .svelte-w0wjf5:nth-child(1): 24 × 19 px, moet minimaal 24 × 24 px zijn"]
+              }
+            ],
+            "passes": 36,
+            "incomplete": [
+              { "id": "color-contrast", "help": "Elements must meet minimum color contrast ratio thresholds", "nodes": 1 },
+              {
+                "id": "duplicate-id-aria",
+                "help": "IDs used in ARIA and labels must be unique",
+                "nodes": 4,
+                "details": [
+                  "progress: id \"progress-partner\" komt op elke partnerkaart terug",
+                  "dialog input[name=\"name\"]: id \"name\" komt meerdere keren voor",
+                  "dialog input[name=\"url\"]: id \"url\" komt meerdere keren voor",
+                  "dialog input[name=\"sitemap\"]: id \"sitemap\" komt meerdere keren voor"
+                ]
+              }
+            ]
+          },
+          "structure": {
+            "lang": "nl",
+            "title": "Partneroverzicht",
+            "h1": 1,
+            "headings": "h1 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2",
+            "landmarks": { "header": 1, "nav": 1, "main": 1, "footer": 0 },
+            "imagesWithoutAlt": 0,
+            "horizontalScroll": false
+          }
+        },
+        "mobile": {
+          "axe": {
+            "violations": [
+              {
+                "id": "color-contrast",
+                "impact": "serious",
+                "help": "Elements must meet minimum color contrast ratio thresholds",
+                "nodes": 1,
+                "details": ["#partner-search (placeholder zoekveld): 1.97:1 (#c8b3be op #ffffff)"]
+              },
+              {
+                "id": "empty-heading",
+                "impact": "minor",
+                "help": "Headings should not be empty",
+                "nodes": 1,
+                "details": ["h1: heeft geen tekst die een schermlezer kan voorlezen"]
+              },
+              {
+                "id": "link-name",
+                "impact": "serious",
+                "help": "Links must have discernible text",
+                "nodes": 1,
+                "details": [".scroll-color-override > a[href$=\"#main\"]: skip link zonder tekst voor schermlezers"]
+              },
+              {
+                "id": "region",
+                "impact": "moderate",
+                "help": "All page content should be contained by landmarks",
+                "nodes": 2,
+                "details": [".add-button: staat buiten een landmark", ".subheader-layout > .svelte-ktzq9t: staat buiten een landmark"]
+              },
+              {
+                "id": "target-size",
+                "impact": "serious",
+                "help": "All touch targets must be 24px large, or leave sufficient space",
+                "nodes": 1,
+                "details": ["#filter-sort > .svelte-w0wjf5:nth-child(1): 24 × 19 px, moet minimaal 24 × 24 px zijn"]
+              }
+            ],
+            "passes": 36,
+            "incomplete": [
+              { "id": "color-contrast", "help": "Elements must meet minimum color contrast ratio thresholds", "nodes": 2 },
+              { "id": "duplicate-id-aria", "help": "IDs used in ARIA and labels must be unique", "nodes": 4 }
+            ]
+          },
+          "structure": {
+            "lang": "nl",
+            "title": "Partneroverzicht",
+            "h1": 1,
+            "headings": "h1 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2 > h2",
+            "landmarks": { "header": 1, "nav": 0, "main": 1, "footer": 0 },
+            "imagesWithoutAlt": 0,
+            "horizontalScroll": true,
+            "horizontalScrollCause": "partnerkaarten (.card-content) lopen door tot 421 px bij een viewport van 390 px"
+          }
+        }
+      },
+      "keyboard": {
+        "stops": [
+          { "name": "ga naar homepagina", "tag": "a", "focusVisible": true },
+          { "name": "Home", "tag": "a", "focusVisible": true },
+          { "name": "Info", "tag": "a", "focusVisible": true },
+          { "name": "Account", "tag": "a", "focusVisible": true },
+          { "name": "Partner toevoegen", "tag": "a", "focusVisible": true },
+          { "name": "INPUT", "tag": "input", "focusVisible": true },
+          { "name": "Filter pagina", "tag": "button", "focusVisible": true },
+          { "name": "A-Z Z-A", "tag": "select", "focusVisible": true },
+          { "name": "Angular 0%", "tag": "a", "focusVisible": true },
+          { "name": "start audit Angular", "tag": "button", "focusVisible": false },
+          { "name": "bewerk Angular", "tag": "button", "focusVisible": false },
+          { "name": "verwijder Angular", "tag": "button", "focusVisible": false },
+          { "name": "Fdnd 6%", "tag": "a", "focusVisible": true },
+          { "name": "start audit Fdnd", "tag": "button", "focusVisible": false },
+          { "name": "bewerk Fdnd", "tag": "button", "focusVisible": false },
+          { "name": "verwijder Fdnd", "tag": "button", "focusVisible": false },
+          { "name": "GVB 26%", "tag": "a", "focusVisible": true },
+          { "name": "start audit GVB", "tag": "button", "focusVisible": false },
+          { "name": "bewerk GVB", "tag": "button", "focusVisible": false },
+          { "name": "verwijder GVB", "tag": "button", "focusVisible": false },
+          { "name": "Rijksoverheid 0%", "tag": "a", "focusVisible": true },
+          { "name": "start audit Rijksoverheid", "tag": "button", "focusVisible": false },
+          { "name": "bewerk Rijksoverheid", "tag": "button", "focusVisible": false },
+          { "name": "verwijder Rijksoverheid", "tag": "button", "focusVisible": false },
+          { "name": "A", "tag": "a", "focusVisible": true }
+        ],
+        "withoutVisibleFocus": [
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "skipLink": { "firstStop": "Vervoerregio\n\nAmsterdam", "works": false }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "found": true,
+          "buttonName": "open menu",
+          "ariaExpandedAttr": null,
+          "opensWithEnter": true,
+          "ariaExpandedAfterOpen": null,
+          "focusAfterTab": "close menu",
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "found": true,
+          "buttonName": "open menu",
+          "ariaExpandedAttr": null,
+          "opensWithEnter": true,
+          "ariaExpandedAfterOpen": null,
+          "focusAfterTab": "close menu",
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": { "textLength": 43, "headings": 17, "links": 14 },
+      "javascriptFiles": [
+        { "file": "/_app/immutable/chunks/CAHcdugO.js", "kb": 0.8 },
+        { "file": "/_app/immutable/entry/start.BvRVO0Xu.js", "kb": 0.4 },
+        { "file": "/_app/immutable/chunks/BHMd2zYX.js", "kb": 2.4 },
+        { "file": "/_app/immutable/entry/app.v1CDU9wn.js", "kb": 3.5 },
+        { "file": "/_app/immutable/chunks/BJ8H7Bwr.js", "kb": 10.7 },
+        { "file": "/_app/immutable/chunks/DsnmJJEf.js", "kb": 0.3 },
+        { "file": "/_app/immutable/chunks/wkccUmWP.js", "kb": 12.6 },
+        { "file": "/_app/immutable/chunks/DeUIfFsj.js", "kb": 2.0 },
+        { "file": "/_app/immutable/chunks/BhAzOIfM.js", "kb": 0.6 },
+        { "file": "/_app/immutable/chunks/77qCqAjJ.js", "kb": 0.5 },
+        { "file": "/_app/immutable/chunks/D-DiOpRo.js", "kb": 0.8 },
+        { "file": "/_app/immutable/nodes/0.CRRJSs-Q.js", "kb": 5.3 },
+        { "file": "/_app/immutable/chunks/itPs29yM.js", "kb": 8.3 },
+        { "file": "/_app/immutable/chunks/5nQHVYcY.js", "kb": 0.6 },
+        { "file": "/_app/immutable/chunks/BslQmH_N.js", "kb": 2.1 },
+        { "file": "/_app/immutable/chunks/NzQC__Is.js", "kb": 1.0 },
+        { "file": "/_app/immutable/chunks/D_VkTXvd.js", "kb": 1.1 },
+        { "file": "/_app/immutable/nodes/3.eG6ekIm8.js", "kb": 1.5 },
+        { "file": "/_app/immutable/chunks/Bg-hJh5j.js", "kb": 1.3 },
+        { "file": "/_app/immutable/chunks/DV5pRcBc.js", "kb": 6.4 },
+        { "file": "/_app/immutable/nodes/1.ZN0S5GiP.js", "kb": 1.3 }
+      ]
+    }
+  ]
+}
