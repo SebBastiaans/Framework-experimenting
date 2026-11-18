@@ -48,4 +48,9 @@
 		</div>
 	</section>
 </div>
+
+{% for website in directus %}
+	<a href="{{ website.homepage }}">{{ website.title }}</a>
+{% endfor %}
+
 {% endblock %}

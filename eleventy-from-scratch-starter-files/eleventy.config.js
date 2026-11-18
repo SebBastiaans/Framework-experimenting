@@ -1,3 +1,9 @@
+try {
+	process.loadEnvFile();
+} catch {
+	// Geen .env (bijv. op Netlify): daar komen de variabelen uit het dashboard
+}
+
 export default function (eleventyConfig) {
 	eleventyConfig.setInputDirectory('src');
 	eleventyConfig.setOutputDirectory('dist');
