@@ -1,0 +1,167 @@
+{
+  "framework": "NextJS",
+  "baseUrl": "http://localhost:8081",
+  "loggedIn": false,
+  "date": "2026-11-19T15:51:13.964Z",
+  "runs": 5,
+  "pages": [
+    {
+      "name": "Home",
+      "path": "/",
+      "finalUrl": "http://localhost:8081/",
+      "performance": {
+        "desktop": {
+          "ttfb": 3,
+          "fcp": 72,
+          "lcp": 108,
+          "cls": 0.002,
+          "domContentLoaded": 30,
+          "load": 59,
+          "domNodes": 215,
+          "requests": 26,
+          "totalKB": 851.9,
+          "byType": {
+            "Document": { "count": 1, "kb": 8.5 },
+            "Stylesheet": { "count": 1, "kb": 3.5 },
+            "Script": { "count": 8, "kb": 142.6 },
+            "Font": { "count": 3, "kb": 679.9 },
+            "Other": { "count": 1, "kb": 2.8 },
+            "Fetch": { "count": 8, "kb": 7.4 },
+            "Image": { "count": 4, "kb": 7.1 }
+          },
+          "failed": [
+            "404 /info?_rsc=5CB68i4pnAekjehf",
+            "404 /gvb?_rsc=5CB68i4pnAekjehf",
+            "404 /angular?_rsc=5CB68i4pnAekjehf",
+            "404 /fdnd-?_rsc=5CB68i4pnAekjehf",
+            "404 /rijksoverheid?_rsc=5CB68i4pnAekjehf"
+          ],
+          "consoleErrors": [
+            "Failed to load resource: the server responded with a status of 404 (Not Found)"
+          ]
+        },
+        "mobile": {
+          "ttfb": 151,
+          "fcp": 476,
+          "lcp": 860,
+          "cls": 0.001,
+          "domContentLoaded": 454,
+          "load": 4551,
+          "domNodes": 215,
+          "requests": 24,
+          "totalKB": 851.9,
+          "byType": {
+            "Document": { "count": 1, "kb": 8.5 },
+            "Stylesheet": { "count": 1, "kb": 3.5 },
+            "Script": { "count": 8, "kb": 142.6 },
+            "Image": { "count": 4, "kb": 7.1 },
+            "Fetch": { "count": 6, "kb": 7.4 },
+            "Font": { "count": 3, "kb": 679.9 },
+            "Other": { "count": 1, "kb": 2.8 }
+          },
+          "failed": [
+            "404 /gvb?_rsc=5CB68i4pnAekjehf",
+            "404 /angular?_rsc=5CB68i4pnAekjehf",
+            "404 /fdnd-?_rsc=5CB68i4pnAekjehf"
+          ],
+          "consoleErrors": [
+            "Failed to load resource: the server responded with a status of 404 (Not Found)"
+          ]
+        }
+      },
+      "a11y": {
+        "desktop": {
+          "axe": { "violations": [], "passes": 44, "incomplete": [] },
+          "structure": {
+            "lang": "nl",
+            "title": "Home",
+            "h1": 1,
+            "headings": "h1 > h2 > h2 > h2 > h2",
+            "landmarks": { "header": 1, "nav": 1, "main": 1, "footer": 0 },
+            "imagesWithoutAlt": 0,
+            "horizontalScroll": false
+          }
+        },
+        "mobile": {
+          "axe": { "violations": [], "passes": 42, "incomplete": [] },
+          "structure": {
+            "lang": "nl",
+            "title": "Home",
+            "h1": 1,
+            "headings": "h1 > h2 > h2 > h2 > h2",
+            "landmarks": { "header": 1, "nav": 0, "main": 1, "footer": 0 },
+            "imagesWithoutAlt": 0,
+            "horizontalScroll": true
+          }
+        }
+      },
+      "keyboard": {
+        "stops": [
+          { "name": "Jump directly to main content", "tag": "a", "focusVisible": true },
+          { "name": "ga naar homepagina", "tag": "a", "focusVisible": true },
+          { "name": "Home", "tag": "a", "focusVisible": true },
+          { "name": "Info", "tag": "a", "focusVisible": true },
+          { "name": "Website toevoegen", "tag": "a", "focusVisible": true },
+          { "name": "INPUT", "tag": "input", "focusVisible": true },
+          { "name": "Filter pagina", "tag": "button", "focusVisible": true },
+          { "name": "Standaard Naam (A-Z) Naam (Z-A) Voortgan", "tag": "select", "focusVisible": true },
+          { "name": "Toepassen", "tag": "button", "focusVisible": true },
+          { "name": "GVB", "tag": "a", "focusVisible": true },
+          { "name": "start audit GVB", "tag": "button", "focusVisible": false },
+          { "name": "bewerk GVB", "tag": "button", "focusVisible": false },
+          { "name": "verwijder GVB", "tag": "button", "focusVisible": false },
+          { "name": "Angular", "tag": "a", "focusVisible": true },
+          { "name": "start audit Angular", "tag": "button", "focusVisible": false },
+          { "name": "bewerk Angular", "tag": "button", "focusVisible": false },
+          { "name": "verwijder Angular", "tag": "button", "focusVisible": false },
+          { "name": "Fdnd", "tag": "a", "focusVisible": true },
+          { "name": "start audit Fdnd", "tag": "button", "focusVisible": false },
+          { "name": "bewerk Fdnd", "tag": "button", "focusVisible": false },
+          { "name": "verwijder Fdnd", "tag": "button", "focusVisible": false },
+          { "name": "Rijksoverheid", "tag": "a", "focusVisible": true },
+          { "name": "start audit Rijksoverheid", "tag": "button", "focusVisible": false },
+          { "name": "bewerk Rijksoverheid", "tag": "button", "focusVisible": false },
+          { "name": "verwijder Rijksoverheid", "tag": "button", "focusVisible": false }
+        ],
+        "withoutVisibleFocus": [
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "skipLink": { "firstStop": "Jump directly to main content", "works": true }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "found": true,
+          "buttonName": "open menu",
+          "ariaExpandedAttr": null,
+          "opensWithEnter": true,
+          "ariaExpandedAfterOpen": null,
+          "focusAfterTab": "close menu",
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "found": true,
+          "buttonName": "open menu",
+          "ariaExpandedAttr": null,
+          "opensWithEnter": true,
+          "ariaExpandedAfterOpen": null,
+          "focusAfterTab": "close menu",
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": { "textLength": 168, "headings": 5, "links": 11 }
+    }
+  ]
+}
