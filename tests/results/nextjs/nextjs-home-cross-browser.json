@@ -1,0 +1,320 @@
+{
+  "framework": "NextJS",
+  "url": "http://localhost:8081/",
+  "loggedIn": false,
+  "date": "2026-11-19T15:52:35.811Z",
+  "runs": 5,
+  "browsers": {
+    "chromium": {
+      "version": "158.0.8127.18",
+      "performance": {
+        "ttfb": 3,
+        "fcp": 28,
+        "lcp": 128,
+        "cls": 0.005,
+        "domContentLoaded": 21,
+        "load": 43,
+        "requests": 29,
+        "jsFiles": 7,
+        "failed": [
+          "404 /info?_rsc=5CB68i4pnAekjehf",
+          "404 /gvb?_rsc=5CB68i4pnAekjehf",
+          "404 /angular?_rsc=5CB68i4pnAekjehf",
+          "404 /fdnd-?_rsc=5CB68i4pnAekjehf",
+          "404 /rijksoverheid?_rsc=5CB68i4pnAekjehf"
+        ],
+        "consoleErrors": [
+          "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        ]
+      },
+      "a11y": {
+        "desktop": {
+          "violations": [],
+          "passes": 44,
+          "incomplete": 0
+        },
+        "mobile": {
+          "violations": [],
+          "passes": 42,
+          "incomplete": 0
+        }
+      },
+      "keyboard": {
+        "tabKey": "Tab",
+        "stops": [
+          "Jump directly to main content",
+          "ga naar homepagina",
+          "Home",
+          "Info",
+          "Website toevoegen",
+          "q",
+          "Filter pagina",
+          "Standaard Naam (A-Z) Naam (Z-A) Voortgan",
+          "Toepassen",
+          "GVB",
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "Angular",
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "Fdnd",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "Rijksoverheid",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "withoutVisibleFocus": [
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "skipLink": {
+          "firstStop": "Jump directly to main content",
+          "works": true
+        }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": {
+        "textLength": 168,
+        "headings": 5,
+        "links": 11
+      }
+    },
+    "firefox": {
+      "version": "159.0",
+      "performance": {
+        "ttfb": 3,
+        "fcp": 42,
+        "lcp": 123,
+        "cls": null,
+        "domContentLoaded": 29,
+        "load": 54,
+        "requests": 30,
+        "jsFiles": 7,
+        "failed": [
+          "404 /gvb?_rsc=5CB68i4pnAekjehf",
+          "404 /info?_rsc=5CB68i4pnAekjehf",
+          "404 /angular?_rsc=5CB68i4pnAekjehf",
+          "404 /fdnd-?_rsc=5CB68i4pnAekjehf",
+          "404 /rijksoverheid?_rsc=5CB68i4pnAekjehf"
+        ],
+        "consoleErrors": []
+      },
+      "a11y": {
+        "desktop": {
+          "violations": [],
+          "passes": 44,
+          "incomplete": 0
+        },
+        "mobile": {
+          "violations": [],
+          "passes": 42,
+          "incomplete": 0
+        }
+      },
+      "keyboard": {
+        "tabKey": "Tab",
+        "stops": [
+          "Jump directly to main content",
+          "ga naar homepagina",
+          "Home",
+          "Info",
+          "Website toevoegen",
+          "q",
+          "Filter pagina",
+          "sort",
+          "Toepassen",
+          "GVB",
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "Angular",
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "Fdnd",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "Rijksoverheid",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "withoutVisibleFocus": [
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "skipLink": {
+          "firstStop": "Jump directly to main content",
+          "works": true
+        }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": {
+        "textLength": 126,
+        "headings": 5,
+        "links": 11
+      }
+    },
+    "webkit": {
+      "version": "27.2",
+      "performance": {
+        "ttfb": 3,
+        "fcp": 35,
+        "lcp": 148,
+        "cls": null,
+        "domContentLoaded": 36,
+        "load": 142,
+        "requests": 29,
+        "jsFiles": 7,
+        "failed": [
+          "404 /info?_rsc=5CB68i4pnAekjehf",
+          "404 /gvb?_rsc=5CB68i4pnAekjehf",
+          "404 /angular?_rsc=5CB68i4pnAekjehf",
+          "404 /fdnd-?_rsc=5CB68i4pnAekjehf",
+          "404 /rijksoverheid?_rsc=5CB68i4pnAekjehf"
+        ],
+        "consoleErrors": [
+          "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        ]
+      },
+      "a11y": {
+        "desktop": {
+          "violations": [],
+          "passes": 44,
+          "incomplete": 0
+        },
+        "mobile": {
+          "violations": [],
+          "passes": 42,
+          "incomplete": 0
+        }
+      },
+      "keyboard": {
+        "tabKey": "Alt+Tab",
+        "stops": [
+          "Jump directly to main content",
+          "ga naar homepagina",
+          "Home",
+          "Info",
+          "Website toevoegen",
+          "q",
+          "Filter pagina",
+          "Standaard Naam (A-Z) Naam (Z-A) Voortgan",
+          "Toepassen",
+          "GVB",
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "Angular",
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "Fdnd",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "Rijksoverheid",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "withoutVisibleFocus": [
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "skipLink": {
+          "firstStop": "Jump directly to main content",
+          "works": true
+        }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": {
+        "textLength": 126,
+        "headings": 5,
+        "links": 11
+      }
+    }
+  },
+  "finalUrl": "http://localhost:8081/"
+}
