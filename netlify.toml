@@ -1,11 +1,10 @@
-# Netlify-configuratie voor de Eleventy-versie.
+# Netlify-configuratie voor de Astro-versie.
 # Het project staat in een submap, daarom 'base'. 'publish' is relatief aan 'base'.
 [build]
-  base = "eleventy-from-scratch-starter-files"
+  base = "astro"
   command = "npm run build"
   publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "22"
-  # Playwright is alleen nodig voor de lokale tests, niet voor de build
-  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD = "1"
+  # Astro 7.4 heeft minimaal Node 22.23.4 nodig
+  NODE_VERSION = "24"
