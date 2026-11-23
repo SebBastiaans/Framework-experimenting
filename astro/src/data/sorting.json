@@ -1,0 +1,13 @@
+[
+	{
+		"name": "sort",
+		"label": "Sorteer op",
+		"value": "",
+		"options": [
+			{ "value": "", "label": "Standaard" },
+			{ "value": "title-asc", "label": "Naam (A-Z)" },
+			{ "value": "title-desc", "label": "Naam (Z-A)" },
+			{ "value": "progress", "label": "Voortgang" }
+		]
+	}
+]

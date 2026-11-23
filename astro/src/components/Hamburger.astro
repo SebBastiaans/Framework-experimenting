@@ -1,0 +1,45 @@
+---
+import Icon from './Icon.astro';
+import navigation from '../data/navigation.json';
+import { getLinkActiveState } from '../data/helpers.js';
+
+const pageUrl = Astro.url.pathname;
+---
+
+<div class="hamburger-wrapper">
+	<button type="button" class="navbutton small hamburger" popovertarget="mobile-nav-menu" aria-label="open menu">
+		<Icon name="menu" />
+	</button>
+</div>
+
+<div popover="auto" id="mobile-nav-menu" class="hamburger-menu">
+	<div class="menu-header">
+		<button
+			type="button"
+			class="navbutton small primary"
+			popovertarget="mobile-nav-menu"
+			popovertargetaction="hide"
+			aria-label="close menu"
+		>
+			<Icon name="cross" />
+		</button>
+	</div>
+
+	<nav aria-label="Mobiel menu">
+		{navigation.items.map((item) => (
+			<a
+				href={item.url}
+				class:list={['navbutton large primary full', { active: pageUrl === item.url }]}
+				{...getLinkActiveState(item.url, pageUrl)}
+			>
+				<Icon name={item.icon} />
+				{item.text}
+			</a>
+		))}
+
+		<a class="navbutton large primary full" aria-disabled="true">
+			<Icon name={navigation.account.icon} />
+			{navigation.account.text}
+		</a>
+	</nav>
+</div>

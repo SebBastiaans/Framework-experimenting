@@ -1,0 +1,21 @@
+---
+import sorting from '../data/sorting.json';
+---
+
+{sorting.length > 0 && (
+	<form method="GET" action="" class="sort" aria-label="Sorteren">
+		{sorting.map((field) => (
+			// houdt een label en zijn select bij elkaar als de velden wrappen
+			<div class="sort-field">
+				<label for={`sort-${field.name}`}>{field.label}</label>
+				<select id={`sort-${field.name}`} name={field.name}>
+					{field.options.map((option) => (
+						<option value={option.value} selected={option.value === field.value}>{option.label}</option>
+					))}
+				</select>
+			</div>
+		))}
+
+		<button type="submit">Toepassen</button>
+	</form>
+)}

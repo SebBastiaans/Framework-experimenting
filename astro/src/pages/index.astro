@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import SubHeader from '../components/SubHeader.astro';
+import Card from '../components/Card.astro';
+import { getWebsites } from '../data/directus.js';
+
+const websites = await getWebsites();
+---
+
+<Base title="Home">
+	<SubHeader websites={websites} />
+
+	<section class="cards">
+		{websites.map((website) => <Card website={website} />)}
+	</section>
+</Base>

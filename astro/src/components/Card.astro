@@ -1,0 +1,46 @@
+---
+import Icon from './Icon.astro';
+import site from '../data/site.json';
+
+const { website } = Astro.props;
+const progressId = `progress-${website.slug}`;
+const percent = website.percent ?? 0;
+---
+
+<div class="card-wrapper">
+	<article class="card-partner color-primary-light">
+		<picture class="card-partner-logo">
+			<img
+				class="partner-logo"
+				src={`${site.faviconAPI}${website.homepage}&sz=128`}
+				alt={`logo van ${website.title}`}
+				fetchpriority="high"
+			/>
+		</picture>
+
+		<div class="card-content">
+			<h2 class="card-title">
+				<a href={`/${website.slug}/`} class="card-link">{website.title}</a>
+			</h2>
+
+			<div class="partner-progress-container color-primary">
+				<progress id={progressId} max="100" value={percent}></progress>
+				<label class="progress-percentage" for={progressId}>{percent}%</label>
+			</div>
+
+			<div class="card-icons-partner">
+				<button type="button" class="navbutton small secondary" aria-label={`start audit ${website.title}`}>
+					<Icon name="audit" />
+				</button>
+
+				<button type="button" class="navbutton small secondary" aria-label={`bewerk ${website.title}`}>
+					<Icon name="edit" />
+				</button>
+
+				<button type="button" class="navbutton small secondary" aria-label={`verwijder ${website.title}`}>
+					<Icon name="delete" />
+				</button>
+			</div>
+		</div>
+	</article>
+</div>

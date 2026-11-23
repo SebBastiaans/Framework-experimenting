@@ -1,0 +1,40 @@
+---
+import Logo from './Logo.astro';
+import Hamburger from './Hamburger.astro';
+import Icon from './Icon.astro';
+import navigation from '../data/navigation.json';
+import { getLinkActiveState } from '../data/helpers.js';
+
+const pageUrl = Astro.url.pathname;
+---
+
+<a class="skip-link" href="#main-content">Jump directly to main content</a>
+<header class="site-header">
+	<Logo />
+
+	<nav class="header-navigation" aria-label="Hoofdmenu">
+		<ul class="header-navigation-wrapper">
+			{navigation.items.map((item) => (
+				<li>
+					<a
+						href={item.url}
+						class:list={['navbutton header', { active: pageUrl === item.url }]}
+						{...getLinkActiveState(item.url, pageUrl)}
+					>
+						<Icon name={item.icon} />
+						{item.text}
+					</a>
+				</li>
+			))}
+		</ul>
+
+		<div class="account-button">
+			<a class="navbutton header" aria-disabled="true">
+				<Icon name={navigation.account.icon} />
+				{navigation.account.text}
+			</a>
+		</div>
+	</nav>
+
+	<Hamburger />
+</header>

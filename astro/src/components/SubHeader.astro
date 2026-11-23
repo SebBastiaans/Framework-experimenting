@@ -1,0 +1,22 @@
+---
+import AddButton from './AddButton.astro';
+import Search from './Search.astro';
+import Filter from './Filter.astro';
+import Sort from './Sort.astro';
+
+const { websites = [] } = Astro.props;
+---
+
+<div class="subheader-container">
+	<section class="subheader-layout">
+		<h1 class="visually-hidden">Home pagina</h1>
+
+		<AddButton />
+
+		<Search />
+
+		<Filter websites={websites} />
+
+		<Sort />
+	</section>
+</div>

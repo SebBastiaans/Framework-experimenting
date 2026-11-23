@@ -1,0 +1,9 @@
+---
+// Laadt alle svg's uit src/icons als tekst, zodat ze inline in de html komen
+const icons = import.meta.glob('../icons/*.svg', { query: '?raw', import: 'default', eager: true });
+
+const { name } = Astro.props;
+const svg = icons[`../icons/${name}.svg`];
+---
+
+<Fragment set:html={svg} />

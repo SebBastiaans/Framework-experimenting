@@ -1,0 +1,44 @@
+<svg aria-hidden="true" focusable="false" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<path
+		d="M5 6.44825L6.9091 8.62062L10.0909 5"
+		stroke="currentColor"
+		stroke-width="3"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+	/>
+	<path
+		d="M5 15.1379L6.9091 17.3103L10.0909 13.6897"
+		stroke="currentColor"
+		stroke-width="3"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+	/>
+	<path
+		d="M5 23.8276L6.9091 26L10.0909 22.3794"
+		stroke="currentColor"
+		stroke-width="3"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+	/>
+	<path
+		d="M14.5454 7.17261H26"
+		stroke="currentColor"
+		stroke-width="3"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+	/>
+	<path
+		d="M14.5454 15.8618H26"
+		stroke="currentColor"
+		stroke-width="3"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+	/>
+	<path
+		d="M14.5454 24.5508H26"
+		stroke="currentColor"
+		stroke-width="3"
+		stroke-linecap="round"
+		stroke-linejoin="round"
+	/>
+</svg>

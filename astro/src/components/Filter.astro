@@ -1,0 +1,23 @@
+---
+import Icon from './Icon.astro';
+
+const { websites = [] } = Astro.props;
+---
+
+<div class="filter">
+	<button type="button" class="filter-btn" popovertarget="filter-menu">
+		Filter pagina
+		<Icon name="filter" />
+	</button>
+
+	{/* Alleen het partner-niveau: url en principe hangen af van een gekozen partner en volgen later */}
+	<form method="GET" action="/" popover="auto" id="filter-menu" class="filter-menu">
+		<label for="breadcrumb-partner" class="visually-hidden">Kies een partner</label>
+		<select id="breadcrumb-partner" name="partner">
+			<option value="">Kies een partner</option>
+			{websites.map((website) => <option value={website.slug}>{website.title}</option>)}
+		</select>
+
+		<button type="submit" name="level" value="partner">Ga</button>
+	</form>
+</div>

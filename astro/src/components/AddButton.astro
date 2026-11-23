@@ -1,0 +1,13 @@
+---
+import Icon from './Icon.astro';
+
+const { label = 'Website toevoegen', href = '#' } = Astro.props;
+---
+
+<div class="add-btn">
+	<p aria-hidden="true">{label}</p>
+
+	<a href={href} class="add-button" aria-label={label}>
+		<Icon name="add" />
+	</a>
+</div>
