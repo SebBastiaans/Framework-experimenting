@@ -1,0 +1,218 @@
+{
+  "framework": "Astro",
+  "baseUrl": "http://localhost:8081",
+  "loggedIn": false,
+  "date": "2026-11-23T12:15:15.200Z",
+  "runs": 5,
+  "pages": [
+    {
+      "name": "Home",
+      "path": "/",
+      "finalUrl": "http://localhost:8081/",
+      "performance": {
+        "desktop": {
+          "ttfb": 2,
+          "fcp": 88,
+          "lcp": 88,
+          "cls": 0.006,
+          "domContentLoaded": 9,
+          "load": 44,
+          "domNodes": 200,
+          "requests": 16,
+          "totalKB": 733.8,
+          "byType": {
+            "Document": {
+              "count": 1,
+              "kb": 24.7
+            },
+            "Stylesheet": {
+              "count": 4,
+              "kb": 20.6
+            },
+            "Font": {
+              "count": 6,
+              "kb": 679.6
+            },
+            "Image": {
+              "count": 4,
+              "kb": 8.2
+            },
+            "Other": {
+              "count": 1,
+              "kb": 0.6
+            }
+          },
+          "failed": [
+            "404 /fonts/fira-sans/FiraSans-Medium.woff2",
+            "404 /fonts/fira-sans/FiraSans-Regular.woff2",
+            "404 /fonts/fira-sans/FiraSans-Bold.woff2",
+            "404 /favicon.ico"
+          ],
+          "consoleErrors": [
+            "Failed to load resource: the server responded with a status of 404 (File not found)"
+          ]
+        },
+        "mobile": {
+          "ttfb": 151,
+          "fcp": 536,
+          "lcp": 608,
+          "cls": 0.009,
+          "domContentLoaded": 275,
+          "load": 4119,
+          "domNodes": 200,
+          "requests": 16,
+          "totalKB": 732.7,
+          "byType": {
+            "Document": {
+              "count": 1,
+              "kb": 24.7
+            },
+            "Stylesheet": {
+              "count": 4,
+              "kb": 20.6
+            },
+            "Image": {
+              "count": 4,
+              "kb": 7.1
+            },
+            "Font": {
+              "count": 6,
+              "kb": 679.6
+            },
+            "Other": {
+              "count": 1,
+              "kb": 0.6
+            }
+          },
+          "failed": [
+            "404 /fonts/fira-sans/FiraSans-Medium.woff2",
+            "404 /fonts/fira-sans/FiraSans-Regular.woff2",
+            "404 /fonts/fira-sans/FiraSans-Bold.woff2",
+            "404 /favicon.ico"
+          ],
+          "consoleErrors": [
+            "Failed to load resource: the server responded with a status of 404 (File not found)"
+          ]
+        }
+      },
+      "a11y": {
+        "desktop": {
+          "axe": {
+            "violations": [],
+            "passes": 43,
+            "incomplete": []
+          },
+          "structure": {
+            "lang": "nl",
+            "title": "Home",
+            "h1": 1,
+            "headings": "h1 > h2 > h2 > h2 > h2",
+            "landmarks": {
+              "header": 1,
+              "nav": 1,
+              "main": 1,
+              "footer": 0
+            },
+            "imagesWithoutAlt": 0,
+            "horizontalScroll": false
+          }
+        },
+        "mobile": {
+          "axe": {
+            "violations": [],
+            "passes": 41,
+            "incomplete": []
+          },
+          "structure": {
+            "lang": "nl",
+            "title": "Home",
+            "h1": 1,
+            "headings": "h1 > h2 > h2 > h2 > h2",
+            "landmarks": {
+              "header": 1,
+              "nav": 0,
+              "main": 1,
+              "footer": 0
+            },
+            "imagesWithoutAlt": 0,
+            "horizontalScroll": true
+          }
+        }
+      },
+      "keyboard": {
+        "stops": [
+          { "name": "Jump directly to main content", "tag": "a", "focusVisible": true },
+          { "name": "ga naar homepagina", "tag": "a", "focusVisible": true },
+          { "name": "Home", "tag": "a", "focusVisible": true },
+          { "name": "Info", "tag": "a", "focusVisible": true },
+          { "name": "Website toevoegen", "tag": "a", "focusVisible": true },
+          { "name": "INPUT", "tag": "input", "focusVisible": true },
+          { "name": "Filter pagina", "tag": "button", "focusVisible": true },
+          { "name": "Standaard Naam (A-Z) Naam (Z-A) Voortgan", "tag": "select", "focusVisible": true },
+          { "name": "Toepassen", "tag": "button", "focusVisible": true },
+          { "name": "GVB", "tag": "a", "focusVisible": true },
+          { "name": "start audit GVB", "tag": "button", "focusVisible": false },
+          { "name": "bewerk GVB", "tag": "button", "focusVisible": false },
+          { "name": "verwijder GVB", "tag": "button", "focusVisible": false },
+          { "name": "Angular", "tag": "a", "focusVisible": true },
+          { "name": "start audit Angular", "tag": "button", "focusVisible": false },
+          { "name": "bewerk Angular", "tag": "button", "focusVisible": false },
+          { "name": "verwijder Angular", "tag": "button", "focusVisible": false },
+          { "name": "Fdnd", "tag": "a", "focusVisible": true },
+          { "name": "start audit Fdnd", "tag": "button", "focusVisible": false },
+          { "name": "bewerk Fdnd", "tag": "button", "focusVisible": false },
+          { "name": "verwijder Fdnd", "tag": "button", "focusVisible": false },
+          { "name": "Rijksoverheid", "tag": "a", "focusVisible": true },
+          { "name": "start audit Rijksoverheid", "tag": "button", "focusVisible": false },
+          { "name": "bewerk Rijksoverheid", "tag": "button", "focusVisible": false },
+          { "name": "verwijder Rijksoverheid", "tag": "button", "focusVisible": false }
+        ],
+        "withoutVisibleFocus": [
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "skipLink": {
+          "firstStop": "Jump directly to main content",
+          "works": true
+        }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "found": true,
+          "buttonName": "open menu",
+          "ariaExpandedAttr": null,
+          "opensWithEnter": true,
+          "ariaExpandedAfterOpen": null,
+          "focusAfterTab": "close menu",
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "found": true,
+          "buttonName": "open menu",
+          "ariaExpandedAttr": null,
+          "opensWithEnter": true,
+          "ariaExpandedAfterOpen": null,
+          "focusAfterTab": "close menu",
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": {
+        "textLength": 168,
+        "headings": 5,
+        "links": 11
+      }
+    }
+  ]
+}

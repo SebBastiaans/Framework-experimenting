@@ -1,0 +1,318 @@
+{
+  "framework": "Astro",
+  "url": "http://localhost:8081/",
+  "loggedIn": false,
+  "date": "2026-11-23T12:16:32.584Z",
+  "runs": 5,
+  "browsers": {
+    "chromium": {
+      "version": "158.0.8127.18",
+      "performance": {
+        "ttfb": 2,
+        "fcp": 24,
+        "lcp": 92,
+        "cls": 0.009,
+        "domContentLoaded": 6,
+        "load": 99,
+        "requests": 19,
+        "jsFiles": 0,
+        "failed": [
+          "404 /fonts/fira-sans/FiraSans-Medium.woff2",
+          "404 /fonts/fira-sans/FiraSans-Regular.woff2",
+          "404 /fonts/fira-sans/FiraSans-Bold.woff2"
+        ],
+        "consoleErrors": [
+          "Failed to load resource: the server responded with a status of 404 (File not found)"
+        ]
+      },
+      "a11y": {
+        "desktop": {
+          "violations": [],
+          "passes": 43,
+          "incomplete": 0
+        },
+        "mobile": {
+          "violations": [],
+          "passes": 41,
+          "incomplete": 0
+        }
+      },
+      "keyboard": {
+        "tabKey": "Tab",
+        "stops": [
+          "Jump directly to main content",
+          "ga naar homepagina",
+          "Home",
+          "Info",
+          "Website toevoegen",
+          "q",
+          "Filter pagina",
+          "Standaard Naam (A-Z) Naam (Z-A) Voortgan",
+          "Toepassen",
+          "GVB",
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "Angular",
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "Fdnd",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "Rijksoverheid",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "withoutVisibleFocus": [
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "skipLink": {
+          "firstStop": "Jump directly to main content",
+          "works": true
+        }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": {
+        "textLength": 168,
+        "headings": 5,
+        "links": 11
+      }
+    },
+    "firefox": {
+      "version": "159.0",
+      "performance": {
+        "ttfb": 2,
+        "fcp": 42,
+        "lcp": 107,
+        "cls": null,
+        "domContentLoaded": 7,
+        "load": 100,
+        "requests": 19,
+        "jsFiles": 0,
+        "failed": [
+          "404 /fonts/fira-sans/FiraSans-Regular.woff2",
+          "404 /fonts/fira-sans/FiraSans-Medium.woff2",
+          "404 /fonts/fira-sans/FiraSans-Bold.woff2"
+        ],
+        "consoleErrors": [
+          "[JavaScript Error: \"downloadable font: download failed (font-family: \"Fira Sans\" style:normal weight:400 width:100 src index:0): status=2147746065 source: http://localhost:8081/fonts/fira-sans/FiraSans-Regular.woff2\"]",
+          "[JavaScript Error: \"downloadable font: download failed (font-family: \"Fira Sans\" style:normal weight:500 width:100 src index:0): status=2147746065 source: http://localhost:8081/fonts/fira-sans/FiraSans-Medium.woff2\"]",
+          "[JavaScript Error: \"downloadable font: download failed (font-family: \"Fira Sans\" style:normal weight:700 width:100 src index:0): status=2147746065 source: http://localhost:8081/fonts/fira-sans/FiraSans-Bold.woff2\"]"
+        ]
+      },
+      "a11y": {
+        "desktop": {
+          "violations": [],
+          "passes": 43,
+          "incomplete": 0
+        },
+        "mobile": {
+          "violations": [],
+          "passes": 41,
+          "incomplete": 0
+        }
+      },
+      "keyboard": {
+        "tabKey": "Tab",
+        "stops": [
+          "Jump directly to main content",
+          "ga naar homepagina",
+          "Home",
+          "Info",
+          "Website toevoegen",
+          "q",
+          "Filter pagina",
+          "sort",
+          "Toepassen",
+          "GVB",
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "Angular",
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "Fdnd",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "Rijksoverheid",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "withoutVisibleFocus": [
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "skipLink": {
+          "firstStop": "Jump directly to main content",
+          "works": true
+        }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": {
+        "textLength": 126,
+        "headings": 5,
+        "links": 11
+      }
+    },
+    "webkit": {
+      "version": "27.2",
+      "performance": {
+        "ttfb": 2,
+        "fcp": 27,
+        "lcp": 120,
+        "cls": null,
+        "domContentLoaded": 11,
+        "load": 117,
+        "requests": 19,
+        "jsFiles": 0,
+        "failed": [
+          "404 /fonts/fira-sans/FiraSans-Regular.woff2",
+          "404 /fonts/fira-sans/FiraSans-Medium.woff2",
+          "404 /fonts/fira-sans/FiraSans-Bold.woff2"
+        ],
+        "consoleErrors": [
+          "Failed to load resource: the server responded with a status of 404 (File not found)"
+        ]
+      },
+      "a11y": {
+        "desktop": {
+          "violations": [],
+          "passes": 43,
+          "incomplete": 0
+        },
+        "mobile": {
+          "violations": [],
+          "passes": 41,
+          "incomplete": 0
+        }
+      },
+      "keyboard": {
+        "tabKey": "Alt+Tab",
+        "stops": [
+          "Jump directly to main content",
+          "ga naar homepagina",
+          "Home",
+          "Info",
+          "Website toevoegen",
+          "q",
+          "Filter pagina",
+          "Standaard Naam (A-Z) Naam (Z-A) Voortgan",
+          "Toepassen",
+          "GVB",
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "Angular",
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "Fdnd",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "Rijksoverheid",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "withoutVisibleFocus": [
+          "start audit GVB",
+          "bewerk GVB",
+          "verwijder GVB",
+          "start audit Angular",
+          "bewerk Angular",
+          "verwijder Angular",
+          "start audit Fdnd",
+          "bewerk Fdnd",
+          "verwijder Fdnd",
+          "start audit Rijksoverheid",
+          "bewerk Rijksoverheid",
+          "verwijder Rijksoverheid"
+        ],
+        "skipLink": {
+          "firstStop": "Jump directly to main content",
+          "works": true
+        }
+      },
+      "mobileMenu": {
+        "withJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        },
+        "withoutJs": {
+          "popoverSupported": true,
+          "found": true,
+          "opensWithEnter": true,
+          "closesWithEscape": true,
+          "focusReturnsToButton": true
+        }
+      },
+      "noJs": {
+        "textLength": 126,
+        "headings": 5,
+        "links": 11
+      }
+    }
+  },
+  "finalUrl": "http://localhost:8081/"
+}
