@@ -34,8 +34,6 @@
 	--gap-big: 2em;
 }
 
-/* color system when you put a class to the html element you can specify color tone with class */
-/* Fixed @supports nesting structure so it actually works */
 @supports (color: color-mix(in hsl, white, black)) {
 	.color-primary,
 	.color-primary-light,
@@ -85,11 +83,11 @@
 }
 
 .color-white {
-	--place-holder: var(--color-neutral-white); /* Fixed typo here */
+	--place-holder: var(--color-neutral-white); 
 }
 
 .color-black {
-	--place-holder: var(--color-neutral-black); /* Fixed typo here */
+	--place-holder: var(--color-neutral-black); 
 }
 
 .color-accent-primary {
@@ -145,7 +143,6 @@ p {
 	letter-spacing: 0.0025rem;
 }
 
-/* Text from the CMS inside an opened criterion */
 .richtlijn-uitleg p,
 .richtlijn-uitleg ul,
 .richtlijn-uitleg li {
@@ -447,7 +444,6 @@ textarea:valid {
 }
 
 
-/* Verbergt tekst visueel, maar screenreaders lezen hem wel voor */
 .visually-hidden {
 	position: absolute;
 	width: 1px;

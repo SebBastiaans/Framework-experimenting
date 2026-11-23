@@ -1,4 +1,3 @@
-/* Skip link: onzichtbaar tot hij focus krijgt via Tab */
 .skip-link {
 	position: absolute;
 	top: -100%;
@@ -40,7 +39,7 @@ header {
 	display: flex;
 	align-items: center;
 	gap: 2em;
-	list-style: none; /* is nu een <ul>, dus geen bolletjes */
+	list-style: none; 
 }
 
 .header {
@@ -55,16 +54,14 @@ header {
 	filter: brightness(1.1);
 	padding: .5rem 1rem;
 }
-/* Logo (src/_includes/partials/logo.html)
-   In Svelte golden deze regels alleen binnen het Logo-component,
-   daarom staat overal .logo-header voor. */
+
 .logo-header {
 	display: flex;
 	gap: 1em;
 	flex-direction: row;
 	align-items: center;
 	text-decoration: none;
-	color: var(--color-neutral-white); /* svg's gebruiken currentColor */
+	color: var(--color-neutral-white);
 
 	@media (max-width: 1080px) {
 		flex-direction: column;
@@ -108,9 +105,6 @@ header {
 	}
 }
 
-/* Iconen in de navigatie (src/_includes/icons/*.svg)
-   Kwamen uit de <style>-blokken van de losse icon-bestanden.
-   width/height werken niet op een <path>, dus die staan nu op de <svg>. */
 .navbutton svg path {
 	fill: none;
 }
@@ -122,7 +116,6 @@ header {
 	}
 }
 
-/* NavButton-varianten voor het hamburgermenu */
 .small {
 	width: 3em;
 	height: 3em;
@@ -149,7 +142,6 @@ header {
 	color: var(--color-neutral-white);
 }
 
-/* Hamburgermenu (src/_includes/partials/hamburger.html) */
 .hamburger-wrapper {
 	display: none;
 
@@ -168,10 +160,10 @@ header {
 
 @supports selector(:popover-open) {
 	.hamburger-menu {
-		position: fixed; /* stond als 'display: fixed', dat is ongeldig */
+		position: fixed; 
 		height: 100dvh;
 		width: 100%;
-		box-sizing: border-box; /* anders telt de padding bij de 100% op */
+		box-sizing: border-box; 
 		z-index: 100;
 		margin: 0;
 		inset: 0;
@@ -208,7 +200,6 @@ header {
 	margin-bottom: 2rem;
 }
 
-/* Was 'nav' in Svelte; zonder .hamburger-menu zou dit ook het hoofdmenu raken */
 .hamburger-menu nav {
 	display: flex;
 	flex-direction: column;
@@ -216,7 +207,6 @@ header {
 	width: 100%;
 }
 
-/* Achtergrond achter het menu, zodat de focus op het menu ligt */
 .hamburger-menu::backdrop {
 	background-color: var(--color-neutral-black);
 	opacity: 0.3;
